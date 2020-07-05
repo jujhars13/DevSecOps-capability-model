@@ -1,0 +1,10 @@
+[
+  { "title": "Battery Life", "description": 0.92 },
+  { "title": "Brand", "description": 0.98 },
+  { "title": "Contract Cost", "description": 0.29 },
+  { "title": "Design And Quality", "description": 0.17 },
+  { "title": "Have Internet Connectivity", "description": 0.22 },
+  { "title": "Large Screen", "description": 0.02 },
+  { "title": "Price Of Device", "description": 0.21 },
+  { "title": "To Be A Smartphone", "description": 0.5 }
+]

@@ -79,9 +79,10 @@
     ></script>
 
     <div class="radarChart"></div>
-    <div class="radarChart1"></div>
+    <div class="table"></div>
 
     <script src="js/radarChart.js"></script>
+    <script src="js/table.js"></script>
     <script>
       /* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
 
@@ -112,19 +113,24 @@
         roundStrokes: true,
         color: color,
       };
+      const promArr = [
+        fetch("data/radarData.json")
+          .then((response) => response.json())
+          .then((rawData) => {
+            const radarData = Object.values(rawData);
+            // Call function to draw the Radar chart
+            RadarChart(".radarChart", radarData, radarChartOptions);
+          }),
+        fetch("data/tableData.json")
+        .then((response) => response.json())
+          .then((rawData) => {
+            const radarData = Object.values(rawData);
+            // Call function to draw the table
+            generateTable(".table", rawData, radarChartOptions);
+          }),
+      ];
 
-      fetch("data/radarData.json")
-      .then(response => response.json())
-        .then(rawData => {
-          console.log(rawData);
-          console.log(data);
-          const radarData=Object.values(rawData);
-          console.log(radarData);
-          // Call function to draw the Radar chart
-          //RadarChart(".radarChart1", radarData, radarChartOptions);
-          RadarChart(".radarChart", radarData, radarChartOptions);
-        })
-        .catch((err) => console.error);
+      Promise.all(promArr).catch((err) => console.error);
     </script>
   </body>
 </html>
