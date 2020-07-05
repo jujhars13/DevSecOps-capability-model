@@ -29,7 +29,7 @@ spec:
           - backend:
               serviceName: devsecops-cm
               servicePort: 80
-            path: /
+            path: / 
   tls:
     - secretName: ing-tls
 
