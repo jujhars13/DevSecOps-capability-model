@@ -23,7 +23,7 @@ ENVIRONMENT=${ENVIRONMENT:-"production"}
 
 # k8's namespace and other env specific variables
 # staging or production(DEFAULT)
-NAMESPACE="devsecops-cm"
+NAMESPACE="devsecopscm"
 URL="devsecopscm.jujhar.com"
 CONTAINER_NAME="eu.gcr.io/${GCP_PROJECT_ID}/${NAMESPACE}"
 
