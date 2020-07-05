@@ -4,7 +4,6 @@ metadata:
   name: $N_NAMESPACE
 
 ---
-
 # ingress controller rules
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -27,18 +26,17 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: devsecops-cm
+              serviceName: svc
               servicePort: 80
-            path: / 
+            path: /
   tls:
     - secretName: ing-tls
 
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: devsecops-cm
+  name: svc
   namespace: $N_NAMESPACE
   labels:
     app: devsecops-cm
@@ -46,14 +44,13 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 80
-    name: "http"
-    targetPort: 80
+    - port: 80
+      name: "http"
+      targetPort: 80
   selector:
     app: devsecops-cm
 
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -80,7 +77,6 @@ spec:
   revisionHistoryLimit: 6
 
   template:
-
     metadata:
       labels:
         app: devsecops-cm
@@ -95,25 +91,25 @@ spec:
             name: nginx-conf
 
       containers:
-      - name: app
-        image: $N_CONTAINER_NAME
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 80
-        volumeMounts:
-          - mountPath: /etc/nginx/conf.d/
-            name: nginx-conf
-            readOnly: true
-        readinessProbe:
-          httpGet:
-            path: /robots.txt
-            port: 80
-          initialDelaySeconds: 5
-          periodSeconds: 3
-        livenessProbe:
-          httpGet:
-            path: /robots.txt
-            port: 80
-          initialDelaySeconds: 5
-          periodSeconds: 10
-          timeoutSeconds: 1
+        - name: app
+          image: $N_CONTAINER_NAME
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /etc/nginx/conf.d/
+              name: nginx-conf
+              readOnly: true
+          readinessProbe:
+            httpGet:
+              path: /robots.txt
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 3
+          livenessProbe:
+            httpGet:
+              path: /robots.txt
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 1

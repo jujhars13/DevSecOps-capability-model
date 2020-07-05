@@ -74,7 +74,7 @@
 
     <!-- D3.js -->
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"
+      src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"
       charset="utf-8"
     ></script>
 
@@ -102,7 +102,7 @@
       //////////////////// Draw the Chart //////////////////////////
       //////////////////////////////////////////////////////////////
 
-      var color = d3.scale.ordinal().range(["#EDC951", "#CC333F", "#00A0B0"]);
+      var color = d3.scaleOrdinal().range(["#EDC951", "#CC333F", "#00A0B0"]);
 
       var radarChartOptions = {
         w: width,
@@ -121,13 +121,12 @@
             // Call function to draw the Radar chart
             RadarChart(".radarChart", radarData, radarChartOptions);
           }),
-        fetch("data/tableData.json")
-        .then((response) => response.json())
-          .then((rawData) => {
-            const radarData = Object.values(rawData);
-            // Call function to draw the table
-            generateTable(".table", rawData, radarChartOptions);
-          }),
+        // d3.csv("data/tableData.csv").then((rawData) => {
+        //   console.log(rawData);
+        //   //const radarData = Object.values(rawData);
+        //   // Call function to draw the table
+        //   //generateTable(".table", rawData, radarChartOptions);
+        // }),
       ];
 
       Promise.all(promArr).catch((err) => console.error);
