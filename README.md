@@ -9,7 +9,7 @@ Deployed using Kubernetes to [https://devsecopscm.jujhar.com]()
 
 ## TODO
 
-- [ ] change to a HELM deployment
+- [ ] change to a helm deployment
 
 
 ## Development
