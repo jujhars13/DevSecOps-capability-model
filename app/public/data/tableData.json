@@ -1,0 +1,28 @@
+{
+  "headings": [
+    "Dimension",
+    "Sub-Dimension",
+    "Level 1: Basic understanding of practices",
+    "Level 2: Adoption of basic practices",
+    "Level 3: High adoption of practices",
+    "Level 4: Advanced implemntation of principles"
+  ],
+  "rows": [
+    {
+      "dimension": "aloo",
+      "sub-dimension": "gobi",
+      "level1": "peas",
+      "level2:": "potatoes",
+      "level3:": "potatoes",
+      "level4:": "cauliflower"
+    },
+    {
+      "dimension": "peasaloo",
+      "sub-dimension": "peasgobi",
+      "level1": "peaspeas",
+      "level2:": "peaspotatoes",
+      "level3:": "peaspotatoes",
+      "level4:": "peascauliflower"
+    }
+  ]
+}

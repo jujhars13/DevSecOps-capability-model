@@ -6,7 +6,6 @@
 /////////////////////////////////////////////////////////
 
 function RadarChart(id, data, options) {
-
   var cfg = {
     w: 600, //Width of the circle
     h: 600, //Height of the circle
@@ -20,9 +19,9 @@ function RadarChart(id, data, options) {
     opacityCircles: 0.1, //The opacity of the circles of each blob
     strokeWidth: 2, //The width of the stroke around each blob
     roundStrokes: false, //If true the area and stroke will follow a round path (cardinal-closed)
-    color: d3.scaleOrdinal(d3.schemeCategory10) //Color function
+    color: d3.scale.category10(), //Color function
   };
-  console.log(id);
+
   //Put all of the options into a variable called cfg
   if ("undefined" !== typeof options) {
     for (var i in options) {
@@ -31,7 +30,7 @@ function RadarChart(id, data, options) {
       }
     } //for i
   } //if
-  console.log('sat');
+
   //If the supplied maxValue is smaller than the actual one, replace by the max in the data
   var maxValue = Math.max(
     cfg.maxValue,
@@ -59,21 +58,17 @@ function RadarChart(id, data, options) {
   //////////// Create the container SVG and g /////////////
   /////////////////////////////////////////////////////////
 
-  // Remove whatever chart with the same id/class was present before
+  //Remove whatever chart with the same id/class was present before
   d3.select(id).select("svg").remove();
-  console.log('sat');
-  var aloo = d3
-    .select(id)
-    .append("svg");
 
-  // Initiate the radar chart SVG
+  //Initiate the radar chart SVG
   var svg = d3
     .select(id)
     .append("svg")
     .attr("width", cfg.w + cfg.margin.left + cfg.margin.right)
     .attr("height", cfg.h + cfg.margin.top + cfg.margin.bottom)
     .attr("class", "radar" + id);
-  // Append a g element
+  //Append a g element
   var g = svg
     .append("g")
     .attr(

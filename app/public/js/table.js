@@ -1,6 +1,6 @@
 function generateTable(id, data, options) {
   const cfg = {};
-
+  console.log(data);
   const rowHeaders = data.map((el) => {
     return el.title;
   });
