@@ -7,22 +7,41 @@
     "Level 3: High adoption of practices",
     "Level 4: Advanced implemntation of principles"
   ],
-  "rows": [
-    {
-      "dimension": "aloo",
-      "sub-dimension": "gobi",
-      "level1": "peas",
-      "level2:": "potatoes",
-      "level3:": "potatoes",
-      "level4:": "cauliflower"
-    },
-    {
-      "dimension": "peasaloo",
-      "sub-dimension": "peasgobi",
-      "level1": "peaspeas",
-      "level2:": "peaspotatoes",
-      "level3:": "peaspotatoes",
-      "level4:": "peascauliflower"
-    }
-  ]
+  "principles": {
+      "observability" : [
+      {
+        "practice": "Monitoring",
+        "level1": "Some logging",
+        "level2:": "potatoes",
+        "level3:": "potatoes",
+        "level4:": "cauliflower",
+        "score":{
+          "economist":2,
+          "eiu":0
+        }
+      },
+      {
+        "practice": "Logging",
+        "level1": "Some logging",
+        "level2:": "potatoes",
+        "level3:": "potatoes",
+        "level4:": "cauliflower",
+        "score":{
+          "economist":2,
+          "eiu":0
+        }
+      },
+      {
+        "practice": "Alerting & Dashboarding",
+        "level1": "Some logging",
+        "level2:": "potatoes",
+        "level3:": "potatoes",
+        "level4:": "cauliflower",
+        "score":{
+          "economist":2,
+          "eiu":0
+        }
+      }
+    ]
+  }
 }
