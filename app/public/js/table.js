@@ -39,6 +39,7 @@ function generateTable(id, headings, data, options) {
     .enter()
     .append("tr");
 
+  // add row data and hovering bootstrap tooltips
   rows
     .selectAll("td")
     .data((data) => {
@@ -63,6 +64,4 @@ function generateTable(id, headings, data, options) {
     .text(function (d) {
       return d.value;
     });
-
-  console.log("finished");
 }

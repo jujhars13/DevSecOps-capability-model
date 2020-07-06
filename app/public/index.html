@@ -128,16 +128,33 @@
         color: color,
       };
       const promArr = [
-        fetch("data/radarData.json")
-          .then((response) => response.json())
-          .then((rawData) => {
-            const radarData = Object.values(rawData);
-            // Call function to draw the Radar chart
-            RadarChart(".radarChart", radarData, radarChartOptions);
-          }),
         fetch("data/tableData.json")
           .then((response) => response.json())
           .then((rawData) => {
+            // wrangle data for spider chart
+            const tmp = Object.values(rawData.principles);
+            const economistScore = tmp.reduce((acc, el) => {
+              acc.push({
+                axis: el.principle.value,
+                value: el.scores.economist,
+              });
+              return acc;
+            }, []);
+            const eiuScore = tmp.reduce((acc, el) => {
+              acc.push({
+                axis: el.principle.value,
+                value: el.scores.eiu,
+              });
+              return acc;
+            }, []);
+
+            // render spider chart
+            RadarChart(
+              ".radarChart",
+              [economistScore, eiuScore],
+              radarChartOptions
+            );
+
             // Call function to draw the table
             generateTable(
               ".table",

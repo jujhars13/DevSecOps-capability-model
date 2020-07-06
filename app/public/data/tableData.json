@@ -2,7 +2,10 @@
   "headings": ["principle", "level 1", "level 2", "level 3", "level 4"],
   "principles": [
     {
-      "principle": {"value":"observability","description": "Observability of entire stack"},
+      "principle": {
+        "value": "Observability",
+        "description": "Observability of entire stack"
+      },
       "level 1": {
         "value": "Some logging",
         "description": "You should really have some logging at least"
@@ -20,7 +23,85 @@
         "description": "You need maximum really have some logging at least"
       },
       "scores": {
-        "economist": 0.9,
+        "economist": 0.7,
+        "eiu": 0.1
+      }
+    },
+    {
+      "principle": {
+        "value": "Deployment",
+        "description": "Continuous Deployment &amp; Continuous Delivery"
+      },
+      "level 1": {
+        "value": "Some CI/CD",
+        "description": "You should really have some CI/CD at least"
+      },
+      "level 2": {
+        "value": "more CI/CD",
+        "description": "You should have some CI/CD at least"
+      },
+      "level 3": {
+        "value": "even more CI/CD",
+        "description": "You have to have really have some CI/CD at least"
+      },
+      "level 4": {
+        "value": "max CI/CD",
+        "description": "You need maximum really have some CI/CD at least"
+      },
+      "scores": {
+        "economist": 0.8,
+        "eiu": 0.1
+      }
+    },
+    {
+      "principle": {
+        "value": "Security",
+        "description": "How quickly can we restore from backups"
+      },
+      "level 1": {
+        "value": "Some Security",
+        "description": "You should really have some Security at least"
+      },
+      "level 2": {
+        "value": "more Security",
+        "description": "You should have some Security at least"
+      },
+      "level 3": {
+        "value": "even more Security",
+        "description": "You have to have really have some Security at least"
+      },
+      "level 4": {
+        "value": "max Security",
+        "description": "You need maximum really have some Security at least"
+      },
+      "scores": {
+        "economist": 0.5,
+        "eiu": 0.1
+      }
+    },
+    {
+      "principle": {
+        "value": "Durability",
+        "description": "How quickly can we restore from backups"
+      },
+      "level 1": {
+        "value": "Some Durability",
+        "description": "You should really have some Durability at least"
+      },
+      "level 2": {
+        "value": "more Durability",
+        "description": "You should have some Durability at least"
+      },
+      "level 3": {
+        "value": "even more Durability",
+        "description": "You have to have really have some Durability at least"
+      },
+      "level 4": {
+        "value": "max Durability",
+        "description": "You need maximum really have some Durability at least"
+      },
+      "scores": {
+        "economist": 0.3,
         "eiu": 0.1
       }
     }
