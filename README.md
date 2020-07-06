@@ -1,5 +1,5 @@
 # DevSecOps-capability-model
-A capability model for those on DevSecOps transformation journey
+A simplified capability model for those on DevSecOps transformation journey
 
 ## Thanks
 
@@ -30,4 +30,7 @@ curl --insecure https://localhost
 
 # to hit Nodejs directly, bypassing nginx proxy
 curl http://localhost:8081
+
+# or use `npm install -g reload` to refresh your browser
+reload -e "html|js|css|json"
 ```
