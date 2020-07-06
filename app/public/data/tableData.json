@@ -1,47 +1,28 @@
 {
-  "headings": [
-    "Dimension",
-    "Sub-Dimension",
-    "Level 1: Basic understanding of practices",
-    "Level 2: Adoption of basic practices",
-    "Level 3: High adoption of practices",
-    "Level 4: Advanced implemntation of principles"
-  ],
-  "principles": {
-      "observability" : [
-      {
-        "practice": "Monitoring",
-        "level1": "Some logging",
-        "level2:": "potatoes",
-        "level3:": "potatoes",
-        "level4:": "cauliflower",
-        "score":{
-          "economist":2,
-          "eiu":0
-        }
+  "headings": ["principle", "level 1", "level 2", "level 3", "level 4"],
+  "principles": [
+    {
+      "principle": {"value":"observability","description": "Observability of entire stack"},
+      "level 1": {
+        "value": "Some logging",
+        "description": "You should really have some logging at least"
       },
-      {
-        "practice": "Logging",
-        "level1": "Some logging",
-        "level2:": "potatoes",
-        "level3:": "potatoes",
-        "level4:": "cauliflower",
-        "score":{
-          "economist":2,
-          "eiu":0
-        }
+      "level 2": {
+        "value": "more logging",
+        "description": "You should have some logging at least"
       },
-      {
-        "practice": "Alerting & Dashboarding",
-        "level1": "Some logging",
-        "level2:": "potatoes",
-        "level3:": "potatoes",
-        "level4:": "cauliflower",
-        "score":{
-          "economist":2,
-          "eiu":0
-        }
+      "level 3": {
+        "value": "even more logging",
+        "description": "You have to have really have some logging at least"
+      },
+      "level 4": {
+        "value": "max logging",
+        "description": "You need maximum really have some logging at least"
+      },
+      "scores": {
+        "economist": 0.9,
+        "eiu": 0.1
       }
-    ]
-  }
+    }
+  ]
 }

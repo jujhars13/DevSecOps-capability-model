@@ -1,13 +1,9 @@
-function generateTable(id, data, options) {
+function generateTable(id, headings, data, options) {
   const cfg = {};
-  console.log(data);
-  const rowHeaders = data.map((el) => {
-    return el.title;
-  });
 
   var sortAscending = true;
   const table = d3.select(id).append("table");
-  var titles = d3.values(rowHeaders);
+  var titles = d3.values(headings);
   var headers = table
     .append("thead")
     .append("tr")
@@ -36,7 +32,7 @@ function generateTable(id, data, options) {
       }
     });
 
-  var rows = table
+  const rows = table
     .append("tbody")
     .selectAll("tr")
     .data(data)
@@ -45,9 +41,13 @@ function generateTable(id, data, options) {
 
   rows
     .selectAll("td")
-    .data(function (d) {
-      return titles.map(k => {
-        return { value: d.description, name: d.title };
+    .data((data) => {
+      return titles.map((title) => {
+        return {
+          value: data[title].value,
+          name: title,
+          description: data[title].description,
+        };
       });
     })
     .enter()
@@ -55,7 +55,14 @@ function generateTable(id, data, options) {
     .attr("data-th", function (d) {
       return d.name;
     })
+    .attr("title", function (d) {
+      return d.name;
+    })
+    .attr("data-content", (d) => d.description)
+    .attr("data-toggle", "popover")
     .text(function (d) {
       return d.value;
     });
+
+  console.log("finished");
 }

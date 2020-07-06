@@ -35,6 +35,10 @@
       .tooltip {
         fill: #333333;
       }
+
+      th {
+        text-transform: capitalize;
+      }
     </style>
 
     <title>DevSecOps Capability Model</title>
@@ -79,6 +83,16 @@
     ></script>
 
     <div class="radarChart"></div>
+    <div></div>
+    <h3>Principles and rank</h3>
+    <div>
+      <ul>
+        <li>"Level 1: Basic understanding of practices"</li>
+        <li>"Level 2: Adoption of basic practices"</li>
+        <li>"Level 3: High adoption of practices"</li>
+        <li>"Level 4: Advanced implemntation of principles"</li>
+      </ul>
+    </div>
     <div class="table"></div>
 
     <script src="js/radarChart.js"></script>
@@ -122,13 +136,19 @@
             RadarChart(".radarChart", radarData, radarChartOptions);
           }),
         fetch("data/tableData.json")
-        .then((response) => response.json())
-        .then((rawData) => {
-          console.log(rawData);
-          //const radarData = Object.values(rawData);
-          // Call function to draw the table
-          generateTable(".table", rawData, radarChartOptions);
-        }),
+          .then((response) => response.json())
+          .then((rawData) => {
+            // Call function to draw the table
+            generateTable(
+              ".table",
+              rawData.headings,
+              Object.values(rawData.principles),
+              radarChartOptions
+            );
+            $(function () {
+              $('[data-toggle="popover"]').popover({ trigger: "hover" });
+            });
+          }),
       ];
 
       Promise.all(promArr).catch((err) => console.error);
