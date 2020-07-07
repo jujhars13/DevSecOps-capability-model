@@ -50,7 +50,7 @@
       },
       "scores": {
         "economist": 0.8,
-        "eiu": 0.1
+        "eiu": 0.2
       }
     },
     {
@@ -76,6 +76,32 @@
       },
       "scores": {
         "economist": 0.5,
+        "eiu": 0.1
+      }
+    },
+    {
+      "principle": {
+        "value": "Availability",
+        "description": "How do we keep things up and running"
+      },
+      "level 1": {
+        "value": "Some Availability",
+        "description": "You should really have some Availability at least"
+      },
+      "level 2": {
+        "value": "more Availability",
+        "description": "You should have some Availability at least"
+      },
+      "level 3": {
+        "value": "even more Availability",
+        "description": "You have to have really have some Availability at least"
+      },
+      "level 4": {
+        "value": "max Availability",
+        "description": "You need maximum really have some Availability at least"
+      },
+      "scores": {
+        "economist": 0.4,
         "eiu": 0.1
       }
     },
