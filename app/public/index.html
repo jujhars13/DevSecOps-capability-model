@@ -15,6 +15,17 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
+    <!-- Google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <style>
       body {
@@ -22,9 +33,12 @@
         font-size: 11px;
         font-weight: 300;
         fill: #242424;
-        text-align: center;
         text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
         cursor: default;
+      }
+
+      .center {
+        text-align: center;
       }
 
       .legend {
@@ -44,8 +58,6 @@
     <title>DevSecOps Capability Model</title>
   </head>
   <body>
-    <h1>DevSecOps Capability Model</h1>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
@@ -64,17 +76,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- Google fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:400,300"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway"
-      rel="stylesheet"
-      type="text/css"
-    />
 
     <!-- D3.js -->
     <script
@@ -82,15 +83,18 @@
       charset="utf-8"
     ></script>
 
-    <div class="radarChart"></div>
+    <h1 class="center">DevSecOps Capability Model</h1>
+
+    <div class="radarChart center"></div>
     <div></div>
-    <h3>Principles and rank</h3>
+
+    <h3 class="container">Principles and rank</h3>
     <div>
       <ul>
-        <li>"Level 1: Basic understanding of practices"</li>
-        <li>"Level 2: Adoption of basic practices"</li>
-        <li>"Level 3: High adoption of practices"</li>
-        <li>"Level 4: Advanced implemntation of principles"</li>
+        <p>"Level 1: Basic understanding of practices"</p>
+        <p>"Level 2: Adoption of basic practices"</p>
+        <p>"Level 3: High adoption of practices"</p>
+        <p>"Level 4: Advanced implemntation of principles"</p>
       </ul>
     </div>
     <div class="table"></div>

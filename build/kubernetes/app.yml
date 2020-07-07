@@ -92,7 +92,7 @@ spec:
 
       containers:
         - name: app
-          image: $N_CONTAINER_NAME
+          image: $N_CONTAINER_NAME:$N_VERSION
           imagePullPolicy: Always
           ports:
             - containerPort: 80

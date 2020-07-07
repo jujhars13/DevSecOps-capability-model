@@ -43,13 +43,23 @@ if ! gcloud compute instances list; then
     exit 3
 fi
 
+
+# get the current deploy version number
+DEPLOY_VERSION_NUMBER=`cat version`
+# now increment the version number for next time we invoke
+echo $(($DEPLOY_VERSION_NUMBER + 1)) > version
+
+echo "Deploying version ${DEPLOY_VERSION_NUMBER}"
+
 echo "Building and pushing container"
 # build php container (locally)
 gcloud auth configure-docker --quiet
 # build php container
-docker build -f Dockerfile -t "${CONTAINER_NAME}:latest" ./
+docker build -f Dockerfile -t "${CONTAINER_NAME}:${DEPLOY_VERSION_NUMBER}" ./
 # deploy container to GCR
-docker push "${CONTAINER_NAME}:latest"
+docker push "${CONTAINER_NAME}:${DEPLOY_VERSION_NUMBER}"
+
+
 
 # create namespace
 kubectl create namespace "${NAMESPACE}" || true
@@ -75,6 +85,7 @@ kubectl create secret tls tls \
     sed s~\$N_CONTAINER_NAME~"${CONTAINER_NAME}"~g | \
     sed s~\$N_NAMESPACE~"${NAMESPACE}"~g | \
     sed s~\$N_ENVIRONMENT~"${ENVIRONMENT}"~g | \
+    sed s~\$N_VERSION~"${DEPLOY_VERSION_NUMBER}"~g | \
     sed s~\$N_URL~${URL}~g | \
     tee "/tmp/k8s-${NAMESPACE}.yml" | \
     kubectl apply -f -
@@ -82,7 +93,7 @@ kubectl create secret tls tls \
 kubectl get pods --namespace="${NAMESPACE}"
 
 echo -e "\n"
-echo "Deployed ${CONTAINER_NAME} to https://${URL}"
+echo "Deployed ${CONTAINER_NAME}:${DEPLOY_VERSION_NUMBER} to https://${URL}"
 
 echo -e "\n-------------------------------"
 
