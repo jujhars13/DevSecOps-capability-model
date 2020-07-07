@@ -7,11 +7,11 @@
 
 function RadarChart(id, data, options) {
   var cfg = {
-    w: 600, //Width of the circle
-    h: 600, //Height of the circle
+    w: 200, // Width of the circle
+    h: 600, // Height of the circle
     margin: { top: 20, right: 20, bottom: 20, left: 20 }, //The margins of the SVG
     levels: 3, //How many levels or inner circles should there be drawn
-    maxValue: 0, //What is the value that the biggest circle will represent
+    maxValue: 100, //What is the value that the biggest circle will represent
     labelFactor: 1.25, //How much farther than the radius of the outer circle should the labels be placed
     wrapWidth: 60, //The number of pixels after which a label needs to be given a new line
     opacityArea: 0.35, //The opacity of the area of the blob
@@ -203,7 +203,7 @@ function RadarChart(id, data, options) {
     radarLine.interpolate("cardinal-closed");
   }
 
-  //Create a wrapper for the blobs
+  // Create a wrapper for the blobs
   var blobWrapper = g
     .selectAll(".radarWrapper")
     .data(data)
@@ -211,7 +211,7 @@ function RadarChart(id, data, options) {
     .append("g")
     .attr("class", "radarWrapper");
 
-  //Append the backgrounds
+  // Append the backgrounds
   blobWrapper
     .append("path")
     .attr("class", "radarArea")
@@ -239,7 +239,7 @@ function RadarChart(id, data, options) {
         .style("fill-opacity", cfg.opacityArea);
     });
 
-  //Create the outlines
+  // Create the outlines
   blobWrapper
     .append("path")
     .attr("class", "radarStroke")
@@ -253,7 +253,7 @@ function RadarChart(id, data, options) {
     .style("fill", "none")
     .style("filter", "url(#glow)");
 
-  //Append the circles
+  // Append the circles
   blobWrapper
     .selectAll(".radarCircle")
     .data(function (d, i) {
@@ -278,7 +278,7 @@ function RadarChart(id, data, options) {
   //////// Append invisible circles for tooltip ///////////
   /////////////////////////////////////////////////////////
 
-  //Wrapper for the invisible circles on top
+  // Wrapper for the invisible circles on top
   var blobCircleWrapper = g
     .selectAll(".radarCircleWrapper")
     .data(data)
@@ -320,15 +320,15 @@ function RadarChart(id, data, options) {
       tooltip.transition().duration(200).style("opacity", 0);
     });
 
-  //Set up the small tooltip for when you hover over a circle
-  var tooltip = g.append("text").attr("class", "tooltip").style("opacity", 0);
+  // Set up the small tooltip for when you hover over a circle
+  var tooltip = g.append("text").attr("class", "popover").style("opacity", 0);
 
   /////////////////////////////////////////////////////////
   /////////////////// Helper Function /////////////////////
   /////////////////////////////////////////////////////////
 
-  //Taken from http://bl.ocks.org/mbostock/7555321
-  //Wraps SVG text
+  // Taken from http://bl.ocks.org/mbostock/7555321
+  // Wraps SVG text
   function wrap(text, width) {
     text.each(function () {
       var text = d3.select(this),

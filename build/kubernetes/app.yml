@@ -12,11 +12,11 @@ metadata:
   namespace: $N_NAMESPACE
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/limit-rpm: "20"
-    nginx.ingress.kubernetes.io/enable-modsecurity: "true"
-    nginx.ingress.kubernetes.io/enable-owasp-core-rules: "true"
-    nginx.ingress.kubernetes.io/modsecurity-transaction-id: "$request_id"
+    # nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    # nginx.ingress.kubernetes.io/limit-rpm: "20"
+    # nginx.ingress.kubernetes.io/enable-modsecurity: "true"
+    # nginx.ingress.kubernetes.io/enable-owasp-core-rules: "true"
+    # nginx.ingress.kubernetes.io/modsecurity-transaction-id: "$request_id"
   labels:
     app: devsecops-cm
     environment: $N_ENVIRONMENT
@@ -30,7 +30,7 @@ spec:
               servicePort: 80
             path: /
   tls:
-    - secretName: tls
+    - secretName: ing-tls
 
 ---
 apiVersion: v1
@@ -42,7 +42,7 @@ metadata:
     app: devsecops-cm
     environment: $N_ENVIRONMENT
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
     - port: 80
       name: "http"
@@ -59,6 +59,7 @@ metadata:
   labels:
     app: devsecops-cm
     environment: $N_ENVIRONMENT
+    version: "$N_VERSION"
 
 spec:
   selector:

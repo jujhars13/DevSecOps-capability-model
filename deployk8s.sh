@@ -59,8 +59,6 @@ docker build -f Dockerfile -t "${CONTAINER_NAME}:${DEPLOY_VERSION_NUMBER}" ./
 # deploy container to GCR
 docker push "${CONTAINER_NAME}:${DEPLOY_VERSION_NUMBER}"
 
-
-
 # create namespace
 kubectl create namespace "${NAMESPACE}" || true
 
@@ -74,8 +72,8 @@ kubectl create configmap nginx-conf \
 
 # tls origin certs from cloudflare
 # you might need to generate your own and store them in the .secrets dir
-kubectl delete secret tls --namespace="${NAMESPACE}" || true
-kubectl create secret tls tls \
+kubectl delete secret ing-tls --namespace="${NAMESPACE}" || true
+kubectl create secret tls ing-tls \
     --namespace="${NAMESPACE}" \
     --cert=.secrets/tls/cert.crt \
     --key=.secrets/tls/key.key || true
