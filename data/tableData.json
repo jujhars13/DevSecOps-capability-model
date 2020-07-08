@@ -8,7 +8,7 @@
       },
       "level 1": {
         "value": "Out of the box",
-        "description": "Just the basics you get from free from Cloudwatch, htop, task manager and the like"
+        "description": "Just the basics you get from free from Cloudwatch, htop, task manager etc.  To debug a prod issue you have to add lots of debug print statements"
       },
       "level 2": {
         "value": "more logging",
