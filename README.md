@@ -1,16 +1,15 @@
 # DevSecOps-capability-model
 A simplified capability model for those on DevSecOps transformation journey.
 
-Deployed using github-pages to [https://devsecops.jujhar.com]()
+Deployed using github-pages to [](https://devsecops.jujhar.com)
 
-
-## Thanks
-
-Kudos to the original [Timo Pagel](https://github.com/wurstbrot) for the initial [project](https://github.com/wurstbrot/DevSecOps-MaturityModel).
+## Inspired by
 
 Influenced and inspired by
-- [Unicorn Project](https://www.amazon.co.uk/Unicorn-Project-Disruption-Redshirts-Overthrowing)
-- [Accelerate](https://www.amazon.co.uk/Accelerate-Software-Performing-Technology-Organizations)
+- [Unicorn Project](https://www.amazon.co.uk/dp/1942788762)
+- [Accelerate](https://www.amazon.co.uk/dp/1942788339)
+
+Thanks to [Timo Pagel](https://github.com/wurstbrot) for the initial [project](https://github.com/wurstbrot/DevSecOps-MaturityModel).
 
 ## Deploying
 
