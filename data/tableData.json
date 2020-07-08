@@ -4,11 +4,11 @@
     {
       "principle": {
         "value": "Observability",
-        "description": "Observability of entire stack"
+        "description": "How much observability do you have on your systems environments, inputs, outputs and behaviours. Do you have enough information on how your system runs to make improvements/solve problems"
       },
       "level 1": {
-        "value": "Some logging",
-        "description": "You should really have some logging at least"
+        "value": "Out of the box",
+        "description": "Just the basics you get from free from Cloudwatch, htop, task manager and the like"
       },
       "level 2": {
         "value": "more logging",
@@ -19,8 +19,8 @@
         "description": "You have to have really have some logging at least"
       },
       "level 4": {
-        "value": "max logging",
-        "description": "You need maximum really have some logging at least"
+        "value": "Max Instrumentation and data points",
+        "description": "You can see and model your system behaviours.  You've got complete coverage of every transaction from start to finish"
       },
       "scores": {
         "economist": 0.7,

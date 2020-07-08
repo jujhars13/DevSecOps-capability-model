@@ -35,7 +35,7 @@ title: DevSecOps Capability Model
     <p>"Level 1: Basic understanding of practices"</p>
     <p>"Level 2: Adoption of basic practices"</p>
     <p>"Level 3: High adoption of practices"</p>
-    <p>"Level 4: Advanced implemntation of principles"</p>
+    <p>"Level 4: Advanced implementation of principles"</p>
   </ul>
   <div class="principles-table"></div>
 </div>
@@ -47,7 +47,7 @@ title: DevSecOps Capability Model
   const margin = { top: 100, right: 100, bottom: 100, left: 100 };
   const width = Math.min(800, window.innerWidth - 10) - margin.left - margin.right;
   const height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
-  //const color = d3.scale.ordinal().range(["#EDC951", "#CC333F", "#00A0B0"]);
+  const color = d3.scale.ordinal().range([ "#CC333F", "#00A0B0","#EDC951"]);
   const radarChartOptions = {
     width,
     height,
@@ -55,7 +55,8 @@ title: DevSecOps Capability Model
     maxValue: 1,
     levels: 4, // how may rings
     roundStrokes: true, // round or square edges
-    strokeWidth: 3 // The width of the stroke around each blob
+    strokeWidth: 3, // The width of the stroke around each blob,
+    color
   };
 
   // fetch and render the data as a chart & table
