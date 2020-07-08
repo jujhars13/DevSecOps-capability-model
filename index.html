@@ -2,6 +2,7 @@
 layout: default
 title: DevSecOps Capability Model
 ---
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script
@@ -21,10 +22,7 @@ title: DevSecOps Capability Model
 ></script>
 
 <!-- D3.js -->
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"
-  charset="utf-8"
-></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
 
 <h1 class="center">{{ page.title }}</h1>
 
@@ -42,81 +40,55 @@ title: DevSecOps Capability Model
   <div class="principles-table"></div>
 </div>
 
-
 <script src="js/radarChart.js"></script>
 <script src="js/table.js"></script>
 <script>
-  /* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
-
-  //////////////////////////////////////////////////////////////
-  //////////////////////// Set-Up //////////////////////////////
-  //////////////////////////////////////////////////////////////
-
-  var margin = { top: 100, right: 100, bottom: 100, left: 100 },
-    width =
-      Math.min(800, window.innerWidth - 10) - margin.left - margin.right,
-    height = Math.min(
-      width,
-      window.innerHeight - margin.top - margin.bottom - 20
-    );
-
-  //////////////////////////////////////////////////////////////
-  //////////////////// Draw the Chart //////////////////////////
-  //////////////////////////////////////////////////////////////
-
-  var color = d3.scale.ordinal().range(["#EDC951", "#CC333F", "#00A0B0"]);
-
-  var radarChartOptions = {
+  // chart dimensions and options
+  const width = Math.min(800, window.innerWidth - 10) - margin.left - margin.right;
+  const height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+  const color = d3.scale.ordinal().range(["#EDC951", "#CC333F", "#00A0B0"]);
+  const radarChartOptions = {
     w: width,
     h: height,
-    margin: margin,
+    margin: { top: 100, right: 100, bottom: 100, left: 100 },
     maxValue: 1,
     levels: 4,
     roundStrokes: true,
-    color: color,
+    color: color
   };
-  const promArr = [
-    fetch("data/tableData.json")
-      .then((response) => response.json())
-      .then((rawData) => {
-        // wrangle data for spider chart
-        const tmp = Object.values(rawData.principles);
-        const economistScore = tmp.reduce((acc, el) => {
-          acc.push({
-            axis: el.principle.value,
-            value: el.scores.economist,
-          });
-          return acc;
-        }, []);
-        const eiuScore = tmp.reduce((acc, el) => {
-          acc.push({
-            axis: el.principle.value,
-            value: el.scores.eiu,
-          });
-          return acc;
-        }, []);
 
-        // render spider chart
-        RadarChart(
-          ".radarChart",
-          [economistScore, eiuScore],
-          radarChartOptions
-        );
+  // fetch and render the data as a chart & table
+  fetch("data/tableData.json")
+    .then((response) => response.json())
+    .then((rawData) => {
+      const data = Object.values(rawData.principles);
 
-        // Call function to draw the table
-        generateTable(
-          ".principles-table",
-          rawData.headings,
-          Object.values(rawData.principles),
-          radarChartOptions
-        );
-
-        // enable popovers in the table
-        $(() => {
-          $('[data-toggle="popover"]').popover({ trigger: "hover" });
+      // wrangle data for spider chart
+      const economistScore = data.reduce((acc, el) => {
+        acc.push({
+          axis: el.principle.value,
+          value: el.scores.economist
         });
-      }),
-  ];
+        return acc;
+      }, []);
+      const eiuScore = data.reduce((acc, el) => {
+        acc.push({
+          axis: el.principle.value,
+          value: el.scores.eiu
+        });
+        return acc;
+      }, []);
 
-  Promise.all(promArr).catch((err) => console.error);
+      // render spider chart
+      RadarChart(".radarChart", [economistScore, eiuScore], radarChartOptions);
+
+      // render table
+      generateTable(".principles-table", rawData.headings, data, radarChartOptions);
+
+      // enable popovers in the table
+      $(() => {
+        $('[data-toggle="popover"]').popover({ trigger: "hover" });
+      });
+    })
+    .catch((err) => console.error);
 </script>
