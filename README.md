@@ -1,9 +1,9 @@
 # DevSecOps Capability Model
 A simplified capability model for those on DevSecOps transformation journey.
+Fork and use this to map where you as an organisation are and where you need to be.
 
 ![screnshot](img/screenshot.png)
 
-Use this to map where you as an organisation are and where you need to be.
 All the raw data is in `data/tableData.json`
 
 Deployed using github-pages to [](https://devsecops.jujhar.com)
