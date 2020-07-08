@@ -1,0 +1,16 @@
+highlighter: rouge
+markdown: kramdown
+author: Jujhar Singh
+url: https://devsecopscm.jujhar.com
+permalink: pretty
+exclude: ['README.md','_config.yaml','.gitignore','/.git','.history']
+
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  profile: false
+  ignore:
+    envs: [production]
+
+google_analytics_tracking_id: UA-23579994-1
