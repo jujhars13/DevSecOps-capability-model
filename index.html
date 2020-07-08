@@ -89,7 +89,7 @@ title: DevSecOps Capability Model
 
       // enable bootstrap popovers in the table
       $(() => {
-        $('[data-toggle="popover"]').popover({ trigger: "hover" });
+        $('[data-toggle="popover"]').popover({ trigger: "hover" ,html:true});
       });
     })
     .catch((err) => console.error);

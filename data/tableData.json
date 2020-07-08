@@ -8,7 +8,14 @@
       },
       "level 1": {
         "value": "Out of the box",
-        "description": "Just the basics you get from free from Cloudwatch, htop, task manager etc.  To debug a prod issue you have to add lots of debug print statements"
+        "description": "Just the basics you get from free from Cloudwatch, htop, task manager etc.",
+        "questions": [
+          "Do you have to have to add lots of debug statements when there's a prod issue?",
+          "Prod issues often catch you off guard?",
+          "You have little idea of how much CPU/Disk/Memory/DB is being used?",
+          "You have no accurate handle on how many rpm your service is handling at a given time",
+          "You have no historical view on application performance"
+        ]
       },
       "level 2": {
         "value": "more logging",

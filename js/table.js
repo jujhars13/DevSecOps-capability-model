@@ -21,10 +21,7 @@ function generateTable(id, headings, data, options) {
     }
   }
 
-  const table = d3
-    .select(id)
-    .append("table")
-    .attr("class", "table table-striped");
+  const table = d3.select(id).append("table").attr("class", "table table-striped");
 
   // table headers
   const titles = Object.values(headings);
@@ -37,40 +34,35 @@ function generateTable(id, headings, data, options) {
     .enter()
     .append("th")
     .text((d) => d)
-    .on("click", function (d) {
+    .on("click", (d) => {
       headers.attr("class", "header");
       if (options.sortAscending) {
-        rows.sort((a, b) =>
-          d3.ascending(Object.values(b)[0].value, Object.values(a)[0].value)
-        );
+        rows.sort((a, b) => d3.ascending(Object.values(b)[0].value, Object.values(a)[0].value));
         options.sortAscending = false;
         this.className = "aes";
       } else {
-        rows.sort((a, b) =>
-          d3.descending(Object.values(b)[0].value, Object.values(a)[0].value)
-        );
+        rows.sort((a, b) => d3.descending(Object.values(b)[0].value, Object.values(a)[0].value));
         options.sortAscending = true;
         this.className = "des";
       }
     });
 
   // render rows
-  const rows = table
-    .append("tbody")
-    .attr("class", "")
-    .selectAll("tr")
-    .data(data)
-    .enter()
-    .append("tr");
+  const rows = table.append("tbody").attr("class", "").selectAll("tr").data(data).enter().append("tr");
   // now add row text and metadata via hovering bootstrap tooltips
   rows
     .selectAll("td")
     .data((data) => {
       return titles.map((title) => {
+        let questions = [];
+        if ("questions" in data[title]) {
+          questions = data[title].questions;
+        }
         return {
           value: data[title].value,
           name: title,
           description: data[title].description,
+          questions
         };
       });
     })
@@ -78,7 +70,13 @@ function generateTable(id, headings, data, options) {
     .append("td")
     .attr("data-th", (d) => d.name)
     .attr("title", (d) => d.name)
-    .attr("data-content", (d) => d.description)
+    .attr("data-content", (d) => {
+      let questions = d.questions.reduce((acc, el) => {
+        acc += `<li>${el}</li>`;
+        return acc;
+      },"");
+      return `${d.description}<hr>${questions}`;
+    })
     .attr("data-toggle", "popover")
     .text((d) => d.value);
 }
