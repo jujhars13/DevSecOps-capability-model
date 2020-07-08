@@ -4,6 +4,7 @@
 ////////////////// VisualCinnamon.com ///////////////////
 /////////// Inspired by the code of alangrafu ///////////
 /////////////////////////////////////////////////////////
+// see http://bl.ocks.org/nbremer/21746a9668ffdf6d8242
 
 function RadarChart(id, data, options) {
   var cfg = {

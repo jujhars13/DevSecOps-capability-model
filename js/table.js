@@ -2,6 +2,7 @@
  * Render an HTML table onto the page using D3.js
  * Could have rendered by hand but d3 give us some nice
  * abstractions
+ * @see http://bl.ocks.org/AMDS/4a61497182b8fcb05906
  *
  * @param {string} id document id you want to inject table into
  * @param {obj} headings array of headings
@@ -10,6 +11,15 @@
  */
 function generateTable(id, headings, data, options) {
   const cfg = { sortAscending: true };
+
+  //Put all of the options into a variable called cfg
+  if (typeof options !== "undefined") {
+    for (let i in options) {
+      if (typeof options[i] !== "undefined") {
+        cfg[i] = options[i];
+      }
+    }
+  }
 
   const table = d3
     .select(id)
@@ -29,22 +39,22 @@ function generateTable(id, headings, data, options) {
     .text((d) => d)
     .on("click", function (d) {
       headers.attr("class", "header");
-
-      if (cfg.sortAscending) {
-        rows.sort(function (a, b) {
-          return b[d] < a[d];
-        });
-        cfg.sortAscending = false;
+      if (options.sortAscending) {
+        rows.sort((a, b) =>
+          d3.ascending(Object.values(b)[0].value, Object.values(a)[0].value)
+        );
+        options.sortAscending = false;
         this.className = "aes";
       } else {
-        rows.sort(function (a, b) {
-          return b[d] > a[d];
-        });
-        cfg.sortAscending = true;
+        rows.sort((a, b) =>
+          d3.descending(Object.values(b)[0].value, Object.values(a)[0].value)
+        );
+        options.sortAscending = true;
         this.className = "des";
       }
     });
 
+  // render rows
   const rows = table
     .append("tbody")
     .attr("class", "")
@@ -52,8 +62,7 @@ function generateTable(id, headings, data, options) {
     .data(data)
     .enter()
     .append("tr");
-
-  // add row data and hovering bootstrap tooltips
+  // now add row text and metadata via hovering bootstrap tooltips
   rows
     .selectAll("td")
     .data((data) => {
