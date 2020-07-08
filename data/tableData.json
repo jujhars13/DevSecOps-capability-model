@@ -130,6 +130,58 @@
         "economist": 0.3,
         "eiu": 0.1
       }
+    },
+    {
+      "principle": {
+        "value": "Data",
+        "description": "How quickly can we restore from backups"
+      },
+      "level 1": {
+        "value": "Some Data",
+        "description": "You should really have some Data at least"
+      },
+      "level 2": {
+        "value": "more Data",
+        "description": "You should have some Data at least"
+      },
+      "level 3": {
+        "value": "even more Data",
+        "description": "You have to have really have some Data at least"
+      },
+      "level 4": {
+        "value": "max Data",
+        "description": "You need maximum really have some Data at least"
+      },
+      "scores": {
+        "economist": 0.2,
+        "eiu": 0.1
+      }
+    },
+    {
+      "principle": {
+        "value": "SRE",
+        "description": "How well are well applying SRE practices"
+      },
+      "level 1": {
+        "value": "Some SRE",
+        "description": "You should really have some Data at least"
+      },
+      "level 2": {
+        "value": "more SRE",
+        "description": "You should have some Data at least"
+      },
+      "level 3": {
+        "value": "even more SRE",
+        "description": "You have to have really have some Data at least"
+      },
+      "level 4": {
+        "value": "max SRE",
+        "description": "You need maximum really have some Data at least"
+      },
+      "scores": {
+        "economist": 0.2,
+        "eiu": 0.1
+      }
     }
   ]
 }
