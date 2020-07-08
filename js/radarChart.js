@@ -4,12 +4,12 @@
 ////////////////// VisualCinnamon.com ///////////////////
 /////////// Inspired by the code of alangrafu ///////////
 /////////////////////////////////////////////////////////
-// see http://bl.ocks.org/nbremer/21746a9668ffdf6d8242
+// @see http://bl.ocks.org/nbremer/21746a9668ffdf6d8242
 
 function RadarChart(id, data, options) {
   var cfg = {
-    w: 200, // Width of the circle
-    h: 600, // Height of the circle
+    width: 200, // Width of the circle
+    height: 600, // Height of the circle
     margin: { top: 20, right: 20, bottom: 20, left: 20 }, //The margins of the SVG
     levels: 3, //How many levels or inner circles should there be drawn
     maxValue: 100, //What is the value that the biggest circle will represent
@@ -19,8 +19,8 @@ function RadarChart(id, data, options) {
     dotRadius: 4, //The size of the colored circles of each blog
     opacityCircles: 0.1, //The opacity of the circles of each blob
     strokeWidth: 2, //The width of the stroke around each blob
-    roundStrokes: false, //If true the area and stroke will follow a round path (cardinal-closed)
-    color: d3.scale.category10(), //Color function
+    roundStrokes: false, // If true the area and stroke will follow a round path (cardinal-closed)
+    color: d3.scale.category10(), // Color function http://bl.ocks.org/aaizemberg/78bd3dade9593896a59d
   };
 
   //Put all of the options into a variable called cfg
@@ -48,7 +48,7 @@ function RadarChart(id, data, options) {
       return i.axis;
     }), //Names of each axis
     total = allAxis.length, //The number of different axes
-    radius = Math.min(cfg.w / 2, cfg.h / 2), //Radius of the outermost circle
+    radius = Math.min(cfg.width / 2, cfg.height / 2), //Radius of the outermost circle
     Format = d3.format("%"), //Percentage formatting
     angleSlice = (Math.PI * 2) / total; //The width in radians of each "slice"
 
@@ -66,19 +66,15 @@ function RadarChart(id, data, options) {
   var svg = d3
     .select(id)
     .append("svg")
-    .attr("width", cfg.w + cfg.margin.left + cfg.margin.right)
-    .attr("height", cfg.h + cfg.margin.top + cfg.margin.bottom)
+    .attr("width", cfg.width + cfg.margin.left + cfg.margin.right)
+    .attr("height", cfg.height + cfg.margin.top + cfg.margin.bottom)
     .attr("class", "radar" + id);
   //Append a g element
   var g = svg
     .append("g")
     .attr(
       "transform",
-      "translate(" +
-        (cfg.w / 2 + cfg.margin.left) +
-        "," +
-        (cfg.h / 2 + cfg.margin.top) +
-        ")"
+      "translate(" + (cfg.width / 2 + cfg.margin.left) + "," + (cfg.height / 2 + cfg.margin.top) + ")"
     );
 
   /////////////////////////////////////////////////////////
@@ -87,10 +83,7 @@ function RadarChart(id, data, options) {
 
   //Filter for the outside glow
   var filter = g.append("defs").append("filter").attr("id", "glow"),
-    feGaussianBlur = filter
-      .append("feGaussianBlur")
-      .attr("stdDeviation", "2.5")
-      .attr("result", "coloredBlur"),
+    feGaussianBlur = filter.append("feGaussianBlur").attr("stdDeviation", "2.5").attr("result", "coloredBlur"),
     feMerge = filter.append("feMerge"),
     feMergeNode_1 = feMerge.append("feMergeNode").attr("in", "coloredBlur"),
     feMergeNode_2 = feMerge.append("feMergeNode").attr("in", "SourceGraphic");
@@ -140,12 +133,7 @@ function RadarChart(id, data, options) {
   /////////////////////////////////////////////////////////
 
   //Create the straight lines radiating outward from the center
-  var axis = axisGrid
-    .selectAll(".axis")
-    .data(allAxis)
-    .enter()
-    .append("g")
-    .attr("class", "axis");
+  var axis = axisGrid.selectAll(".axis").data(allAxis).enter().append("g").attr("class", "axis");
   //Append the lines
   axis
     .append("line")
@@ -169,16 +157,10 @@ function RadarChart(id, data, options) {
     .attr("text-anchor", "middle")
     .attr("dy", "0.35em")
     .attr("x", function (d, i) {
-      return (
-        rScale(maxValue * cfg.labelFactor) *
-        Math.cos(angleSlice * i - Math.PI / 2)
-      );
+      return rScale(maxValue * cfg.labelFactor) * Math.cos(angleSlice * i - Math.PI / 2);
     })
     .attr("y", function (d, i) {
-      return (
-        rScale(maxValue * cfg.labelFactor) *
-        Math.sin(angleSlice * i - Math.PI / 2)
-      );
+      return rScale(maxValue * cfg.labelFactor) * Math.sin(angleSlice * i - Math.PI / 2);
     })
     .text(function (d) {
       return d;
@@ -205,12 +187,7 @@ function RadarChart(id, data, options) {
   }
 
   // Create a wrapper for the blobs
-  var blobWrapper = g
-    .selectAll(".radarWrapper")
-    .data(data)
-    .enter()
-    .append("g")
-    .attr("class", "radarWrapper");
+  var blobWrapper = g.selectAll(".radarWrapper").data(data).enter().append("g").attr("class", "radarWrapper");
 
   // Append the backgrounds
   blobWrapper
@@ -225,19 +202,13 @@ function RadarChart(id, data, options) {
     .style("fill-opacity", cfg.opacityArea)
     .on("mouseover", function (d, i) {
       //Dim all blobs
-      d3.selectAll(".radarArea")
-        .transition()
-        .duration(200)
-        .style("fill-opacity", 0.1);
+      d3.selectAll(".radarArea").transition().duration(200).style("fill-opacity", 0.1);
       //Bring back the hovered over blob
       d3.select(this).transition().duration(200).style("fill-opacity", 0.7);
     })
     .on("mouseout", function () {
       //Bring back all blobs
-      d3.selectAll(".radarArea")
-        .transition()
-        .duration(200)
-        .style("fill-opacity", cfg.opacityArea);
+      d3.selectAll(".radarArea").transition().duration(200).style("fill-opacity", cfg.opacityArea);
     });
 
   // Create the outlines
@@ -309,13 +280,7 @@ function RadarChart(id, data, options) {
       newX = parseFloat(d3.select(this).attr("cx")) - 10;
       newY = parseFloat(d3.select(this).attr("cy")) - 10;
 
-      tooltip
-        .attr("x", newX)
-        .attr("y", newY)
-        .text(Format(d.value))
-        .transition()
-        .duration(200)
-        .style("opacity", 1);
+      tooltip.attr("x", newX).attr("y", newY).text(Format(d.value)).transition().duration(200).style("opacity", 1);
     })
     .on("mouseout", function () {
       tooltip.transition().duration(200).style("opacity", 0);

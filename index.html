@@ -44,17 +44,18 @@ title: DevSecOps Capability Model
 <script src="js/table.js"></script>
 <script>
   // chart dimensions and options
+  const margin = { top: 100, right: 100, bottom: 100, left: 100 };
   const width = Math.min(800, window.innerWidth - 10) - margin.left - margin.right;
   const height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
-  const color = d3.scale.ordinal().range(["#EDC951", "#CC333F", "#00A0B0"]);
+  //const color = d3.scale.ordinal().range(["#EDC951", "#CC333F", "#00A0B0"]);
   const radarChartOptions = {
-    w: width,
-    h: height,
-    margin: { top: 100, right: 100, bottom: 100, left: 100 },
+    width,
+    height,
+    margin,
     maxValue: 1,
-    levels: 4,
-    roundStrokes: true,
-    color: color
+    levels: 4, // how may rings
+    roundStrokes: true, // round or square edges
+    strokeWidth: 3 // The width of the stroke around each blob
   };
 
   // fetch and render the data as a chart & table
@@ -85,7 +86,7 @@ title: DevSecOps Capability Model
       // render table
       generateTable(".principles-table", rawData.headings, data, radarChartOptions);
 
-      // enable popovers in the table
+      // enable bootstrap popovers in the table
       $(() => {
         $('[data-toggle="popover"]').popover({ trigger: "hover" });
       });
