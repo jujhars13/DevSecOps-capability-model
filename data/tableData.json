@@ -4,7 +4,8 @@
     {
       "principle": {
         "value": "Observability",
-        "description": "How much observability do you have on your systems environments, inputs, outputs and behaviours. Do you have enough information on how your system runs to make improvements/solve problems"
+        "description": "How much observability do you have on your systems environments, inputs, outputs and behaviours. Do you have enough information on how your system runs to make improvements/solve problems",
+        "questions": []
       },
       "level 1": {
         "value": "Out of the box",
@@ -19,15 +20,18 @@
       },
       "level 2": {
         "value": "more logging",
-        "description": "You should have some logging at least"
+        "description": "You should have some logging at least",
+        "questions": []
       },
       "level 3": {
         "value": "even more logging",
-        "description": "You have to have really have some logging at least"
+        "description": "You have to have really have some logging at least",
+        "questions": []
       },
       "level 4": {
         "value": "Max Instrumentation and data points",
-        "description": "You can see and model your system behaviours.  You've got complete coverage of every transaction from start to finish"
+        "description": "You can see and model your system behaviours.  You've got complete coverage of every transaction from start to finish",
+        "questions": []
       },
       "scores": {
         "economist": 0.7,
@@ -46,7 +50,6 @@
         "questions": [
           "Do you release multiple times an month?",
           "Your lead time for changes is between 1 week and 1 month",
-
           "Your Change failure rate is between 31-45%"
         ]
       },
@@ -62,8 +65,11 @@
       "level 3": {
         "value": "even more CI/CD",
         "description": "You have to have really have some CI/CD at least",
-        "questions": ["Do you release multiple times a day?", "Your lead time for changes is between 1 day and 1 week",
-          "Your change failure rate is between 0-20%"]
+        "questions": [
+          "Do you release multiple times a day?",
+          "Your lead time for changes is between 1 day and 1 week",
+          "Your change failure rate is between 0-20%"
+        ]
       },
       "level 4": {
         "value": "max CI/CD",
@@ -83,23 +89,28 @@
     {
       "principle": {
         "value": "Security",
-        "description": "How quickly can we restore from backups"
+        "description": "How quickly can we restore from backups",
+        "questions": []
       },
       "level 1": {
         "value": "Some Security",
-        "description": "You should really have some Security at least"
+        "description": "You should really have some Security at least",
+        "questions": []
       },
       "level 2": {
         "value": "more Security",
-        "description": "You should have some Security at least"
+        "description": "You should have some Security at least",
+        "questions": []
       },
       "level 3": {
         "value": "even more Security",
-        "description": "You have to have really have some Security at least"
+        "description": "You have to have really have some Security at least",
+        "questions": []
       },
       "level 4": {
         "value": "max Security",
-        "description": "You need maximum really have some Security at least"
+        "description": "You need maximum really have some Security at least",
+        "questions": []
       },
       "scores": {
         "economist": 0.5,
@@ -110,63 +121,58 @@
       "principle": {
         "value": "Availability",
         "description": "How do we keep things up and running",
-        "questions": [
-          "Can you recover quickly from incidents low MTTR?"
-        ]
+        "questions": ["Can you recover quickly from incidents low MTTR?"]
       },
       "level 1": {
         "value": "Some Availability",
         "description": "You should really have some Availability at least",
-        "questions": [
-          "Your MTTR (mean time to recovery) during an incident avgerages ~ 1d"
-        ]
+        "questions": ["Your MTTR (mean time to recovery) during an incident avgerages ~ 1d"]
       },
       "level 2": {
         "value": "more Availability",
         "description": "You should have some Availability at least",
-        "questions": [
-          "Your MTTR (mean time to recovery) during an incident avgerages ~ 1d"
-        ]
+        "questions": ["Your MTTR (mean time to recovery) during an incident avgerages ~ 1d"]
       },
       "level 3": {
         "value": "even more Availability",
         "description": "You have to have really have some Availability at least",
-        "questions": [
-          "Your MTTR (mean time to recovery) during an incident avgerages < 6hr"
-        ]
+        "questions": ["Your MTTR (mean time to recovery) during an incident avgerages < 6hr"]
       },
       "level 4": {
         "value": "max Availability",
         "description": "You need maximum Availability",
-        "questions": [
-          "Do you have a low and continuously improving MTTR? avg < 1hr"
-        ]
+        "questions": ["Do you have a low and continuously improving MTTR? avg < 1hr"]
       },
       "scores": {
-        "economist": 0.80,
+        "economist": 0.8,
         "eiu": 0.1
       }
     },
     {
       "principle": {
         "value": "Durability",
-        "description": "How quickly can we restore from backups"
+        "description": "How quickly can we restore from backups",
+        "questions": []
       },
       "level 1": {
         "value": "Some Durability",
-        "description": "You should really have some Durability at least"
+        "description": "You should really have some Durability at least",
+        "questions": []
       },
       "level 2": {
         "value": "more Durability",
-        "description": "You should have some Durability at least"
+        "description": "You should have some Durability at least",
+        "questions": []
       },
       "level 3": {
         "value": "even more Durability",
-        "description": "You have to have really have some Durability at least"
+        "description": "You have to have really have some Durability at least",
+        "questions": []
       },
       "level 4": {
         "value": "max Durability",
-        "description": "You need maximum really have some Durability at least"
+        "description": "You need maximum really have some Durability at least",
+        "questions": []
       },
       "scores": {
         "economist": 0.3,
@@ -176,23 +182,28 @@
     {
       "principle": {
         "value": "Data",
-        "description": "How quickly can we restore from backups"
+        "description": "How quickly can we restore from backups",
+        "questions": []
       },
       "level 1": {
         "value": "Some Data",
-        "description": "You should really have some Data at least"
+        "description": "You should really have some Data at least",
+        "questions": []
       },
       "level 2": {
         "value": "more Data",
-        "description": "You should have some Data at least"
+        "description": "You should have some Data at least",
+        "questions": []
       },
       "level 3": {
         "value": "even more Data",
-        "description": "You have to have really have some Data at least"
+        "description": "You have to have really have some Data at least",
+        "questions": []
       },
       "level 4": {
         "value": "max Data",
-        "description": "You need maximum really have some Data at least"
+        "description": "You need maximum really have some Data at least",
+        "questions": []
       },
       "scores": {
         "economist": 0.2,
@@ -201,27 +212,32 @@
     },
     {
       "principle": {
-        "value": "SRE",
-        "description": "How well are well applying SRE practices"
+        "value": "Culture",
+        "description": "How good is your culture?",
+        "questions": []
       },
       "level 1": {
-        "value": "Some SRE",
-        "description": "You should really have some Data at least"
+        "value": "Some Culture",
+        "description": "You have little culture",
+        "questions": []
       },
       "level 2": {
-        "value": "more SRE",
-        "description": "You should have some Data at least"
+        "value": "more Culture",
+        "description": "You should have some Culture",
+        "questions": []
       },
       "level 3": {
-        "value": "even more SRE",
-        "description": "You have to have really have some Data at least"
+        "value": "even more Culture",
+        "description": "You have to have some more Culture",
+        "questions": []
       },
       "level 4": {
-        "value": "max SRE",
-        "description": "You need maximum really have some Data at least"
+        "value": "max Culture",
+        "description": "You need maximum Culture",
+        "questions": []
       },
       "scores": {
-        "economist": 0.2,
+        "economist": 0.8,
         "eiu": 0.1
       }
     }
