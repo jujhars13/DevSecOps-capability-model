@@ -36,24 +36,44 @@
     },
     {
       "principle": {
-        "value": "Deployment",
-        "description": "Continuous Deployment &amp; Continuous Delivery"
+        "value": "Deployment &amp; Delivery",
+        "description": "Enable Fast Flow from development to production and reliable releases by standardising work, reducing variability and batch sizes",
+        "questions": ["Continuous Improvement", "Continuous Integration", "Continuous Delivery"]
       },
       "level 1": {
         "value": "Some CI/CD",
-        "description": "You should really have some CI/CD at least"
+        "description": "You should really have some CI/CD at least",
+        "questions": [
+          "Do you release multiple times an month?",
+          "Your lead time for changes is between 1 week and 1 month",
+
+          "Your Change failure rate is between 31-45%"
+        ]
       },
       "level 2": {
         "value": "more CI/CD",
-        "description": "You should have some CI/CD at least"
+        "description": "You should have some CI/CD at least",
+        "questions": [
+          "Do you release multiple times a week?",
+          "Your lead time for changes is between 1 week and 1 month",
+          "Your change failure rate is between 0-25%"
+        ]
       },
       "level 3": {
         "value": "even more CI/CD",
-        "description": "You have to have really have some CI/CD at least"
+        "description": "You have to have really have some CI/CD at least",
+        "questions": ["Do you release multiple times a day?", "Your lead time for changes is between 1 day and 1 week",
+          "Your change failure rate is between 0-20%"]
       },
       "level 4": {
         "value": "max CI/CD",
-        "description": "You need maximum really have some CI/CD at least"
+        "description": "You need maximum really have some CI/CD at least",
+        "questions": [
+          "Do you release multiple times an day? > 20 times ",
+          "Can you confidently deploy on a Friday?",
+          "Your lead time for changes is between 1 hour and 1 day",
+          "Your change failure rate is between 0-10%"
+        ]
       },
       "scores": {
         "economist": 0.8,
@@ -89,26 +109,41 @@
     {
       "principle": {
         "value": "Availability",
-        "description": "How do we keep things up and running"
+        "description": "How do we keep things up and running",
+        "questions": [
+          "Can you recover quickly from incidents low MTTR?"
+        ]
       },
       "level 1": {
         "value": "Some Availability",
-        "description": "You should really have some Availability at least"
+        "description": "You should really have some Availability at least",
+        "questions": [
+          "Your MTTR (mean time to recovery) during an incident avgerages ~ 1d"
+        ]
       },
       "level 2": {
         "value": "more Availability",
-        "description": "You should have some Availability at least"
+        "description": "You should have some Availability at least",
+        "questions": [
+          "Your MTTR (mean time to recovery) during an incident avgerages ~ 1d"
+        ]
       },
       "level 3": {
         "value": "even more Availability",
-        "description": "You have to have really have some Availability at least"
+        "description": "You have to have really have some Availability at least",
+        "questions": [
+          "Your MTTR (mean time to recovery) during an incident avgerages < 6hr"
+        ]
       },
       "level 4": {
         "value": "max Availability",
-        "description": "You need maximum really have some Availability at least"
+        "description": "You need maximum Availability",
+        "questions": [
+          "Do you have a low and continuously improving MTTR? avg < 1hr"
+        ]
       },
       "scores": {
-        "economist": 0.4,
+        "economist": 0.80,
         "eiu": 0.1
       }
     },
