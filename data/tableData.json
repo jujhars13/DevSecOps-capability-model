@@ -213,28 +213,52 @@
     {
       "principle": {
         "value": "Culture",
-        "description": "How good is your culture?",
-        "questions": []
+        "description": "This section highlights cultural styles and values within the company",
+        "questions": ["How good is your culture?"]
       },
       "level 1": {
-        "value": "Some Culture",
-        "description": "You have little culture",
-        "questions": []
+        "value": "Power-oriented culture",
+        "description": "Very limited scope of responsibility, minimal cooperation, novelty is not welcomed, information is hidden",
+        "questions": [
+        "Do team members feel fear of asking for feedback?",
+        "Is there a punitive culture?",
+        "Is cross-communication discouraged?",
+        "Do employees have little responsibility?",
+        "Is information readily available?"
+      ]
       },
       "level 2": {
-        "value": "more Culture",
-        "description": "You should have some Culture",
-        "questions": []
+        "value": "Rule-oriented culture",
+        "description": "Modest cooperation, rule-following behaviour, narrow responsibility, novelty may lead to problems",
+        "questions": [
+        "Is the organisation fair?",
+        "Does novelty leads to problems?",
+        "Focus on departemental goals",
+        "Failure leads to seek justice",
+        "Is information shared?" ]
       },
       "level 3": {
-        "value": "even more Culture",
-        "description": "You have to have some more Culture",
-        "questions": []
+        "value": "Trust-oriented culture",
+        "description": "Trust-oriented culture",
+        "questions": [
+          "Is there trust across the organisational hierarchy?",
+          "Is cross-functional collaboration encouraged?",
+          "Is communication transparent?",
+          "Are new ideas welcomed?",
+          "Are risks shared?"
+        ]
       },
       "level 4": {
-        "value": "max Culture",
-        "description": "You need maximum Culture",
-        "questions": []
+        "value": "Performance-oriented",
+        "description": "Goal oriented",
+        "questions": [
+          "Is there a focus on organisational goal?",
+          "Is work recognised as meaningful?",
+          "Is cross-functional collaboration established?",
+          "Is innovation sought and implemented?",
+          "is there a match between personal and organisational values?",
+          "Is failure seen as an opportunity to improve the system?"
+        ]
       },
       "scores": {
         "economist": 0.8,
