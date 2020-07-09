@@ -261,8 +261,8 @@
         ]
       },
       "scores": {
-        "economist": 0.8,
-        "eiu": 0.1
+        "economist": 0.7,
+        "eiu": 0.3
       }
     }
   ]
