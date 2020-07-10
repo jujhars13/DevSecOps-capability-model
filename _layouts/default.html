@@ -67,16 +67,44 @@
       content: "\21E7";
     }
 
-    .forkme{transform:rotate(45deg);background-color:#FFF;overflow:hidden;position:fixed;z-index:300;width:240px;right:-60px;top:46px;border-style:solid;border-color:#7B7979}.forkme a{color:#404040;display:block;font:13px Helvetica Neue,Arial,sans-serif;margin:0.05em 0px 0.075em;padding:0.6em;text-align:center;text-decoration:none}
+    .forkme{transform:rotate(45deg);background-color:#FFF;overflow:hidden;position:fixed;z-index:1800;width:240px;right:-60px;top:46px;border-style:solid;border-color:#7B7979}.forkme a{color:#404040;display:block;font:13px Helvetica Neue,Arial,sans-serif;margin:0.05em 0px 0.075em;padding:0.6em;text-align:center;text-decoration:none}
 
   </style>
 
   <title>{{ page.title }}</title>
 </head>
+
 <body>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">DevSecOps Capability Model</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
   <div class="forkme"><a href="https://github.com/jujhars13/DevSecOps-capability-model">Fork me on Github</a></div>
-  <div class="container-fluid">
-    {{ content }}
-  </div>
+
+  <main role="main" class="container">
+    <div class="container">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="footer mt-auto py-3">
+    <div class="container">
+      <span class="text-muted">Place sticky footer content here.</span>
+    </div>
+  </footer>
 </body>
 </html>

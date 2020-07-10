@@ -34,13 +34,14 @@
         "questions": []
       },
       "scores": {
-        "economist": 0.8,
-        "eiu": 0.1
+        "team1": 0.8,
+        "team2": 0.1,
+        "team3": 0.3
       }
     },
     {
       "principle": {
-        "value": "Deployment &amp; Delivery",
+        "value": "Deployment and Delivery",
         "description": "Enable Fast Flow from development to production and reliable releases by standardising work, reducing variability and batch sizes",
         "questions": ["Continuous Improvement", "Continuous Integration", "Continuous Delivery"]
       },
@@ -82,8 +83,9 @@
         ]
       },
       "scores": {
-        "economist": 0.8,
-        "eiu": 0.2
+        "team1": 0.8,
+        "team2": 0.2,
+        "team3": 0.5
       }
     },
     {
@@ -113,25 +115,26 @@
         "questions": []
       },
       "scores": {
-        "economist": 0.5,
-        "eiu": 0.1
+        "team1": 0.5,
+        "team2": 0.1,
+        "team3": 0.6
       }
     },
     {
       "principle": {
         "value": "Availability",
         "description": "How do we keep things up and running",
-        "questions": ["Can you recover quickly from incidents low MTTR?"]
+        "questions": ["Can you rteam2ver quickly from incidents low MTTR?"]
       },
       "level 1": {
         "value": "Some Availability",
         "description": "You should really have some Availability at least",
-        "questions": ["Your MTTR (mean time to recovery) during an incident avgerages ~ 1d"]
+        "questions": ["Your MTTR (mean time to rteam2very) during an incident avgerages ~ 1d"]
       },
       "level 2": {
         "value": "more Availability",
         "description": "You should have some Availability at least",
-        "questions": ["Your MTTR (mean time to recovery) during an incident avgerages ~ 1d"]
+        "questions": ["Your MTTR (mean time to rteam2very) during an incident avgerages ~ 1d"]
       },
       "level 3": {
         "value": "even more Availability",
@@ -144,8 +147,9 @@
         "questions": ["Do you have a low and continuously improving MTTR? avg < 1hr"]
       },
       "scores": {
-        "economist": 0.8,
-        "eiu": 0.1
+        "team1": 0.8,
+        "team2": 0.1,
+        "team3": 0.3
       }
     },
     {
@@ -175,8 +179,9 @@
         "questions": []
       },
       "scores": {
-        "economist": 0.3,
-        "eiu": 0.1
+        "team1": 0.3,
+        "team2": 0.1,
+        "team3": 0.6
       }
     },
     {
@@ -206,8 +211,9 @@
         "questions": []
       },
       "scores": {
-        "economist": 0.2,
-        "eiu": 0.1
+        "team1": 0.2,
+        "team2": 0.1,
+        "team3": 0.5
       }
     },
     {
@@ -261,8 +267,9 @@
         ]
       },
       "scores": {
-        "economist": 0.7,
-        "eiu": 0.3
+        "team1": 0.7,
+        "team2": 0.3,
+        "team3": 0.2
       }
     }
   ]

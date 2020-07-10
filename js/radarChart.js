@@ -22,7 +22,7 @@ function RadarChart(id, data, options) {
     roundStrokes: false, // If true the area and stroke will follow a round path (cardinal-closed)
     color: d3.scale.category10(), // Color function http://bl.ocks.org/aaizemberg/78bd3dade9593896a59d
   };
-
+  console.log(data);
   //Put all of the options into a variable called cfg
   if ("undefined" !== typeof options) {
     for (var i in options) {

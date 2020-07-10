@@ -5,12 +5,21 @@ title: DevSecOps Capability Model
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-  integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+  integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+  crossorigin="anonymous"
+></script>
 
 <!-- D3.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
@@ -18,7 +27,6 @@ title: DevSecOps Capability Model
 <h1 class="center">{{ page.title }}</h1>
 
 <div class="radarChart center"></div>
-<div></div>
 
 <h3 class="container">Principles and rank</h3>
 <div>
@@ -38,7 +46,7 @@ title: DevSecOps Capability Model
   const margin = { top: 100, right: 100, bottom: 100, left: 100 };
   const width = Math.min(800, window.innerWidth - 10) - margin.left - margin.right;
   const height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
-  const color = d3.scale.ordinal().range(["#CC333F", "#00A0B0", "#EDC951"]);
+  //const color = d3.scale.ordinal().range(["#CC333F", "#00A0B0", "#EDC951"]);
   const radarChartOptions = {
     width,
     height,
@@ -47,7 +55,7 @@ title: DevSecOps Capability Model
     levels: 4, // how may rings
     roundStrokes: true, // round or square edges
     strokeWidth: 3, // The width of the stroke around each blob,
-    color
+    //color
   };
 
   // fetch and render the data as a chart & table
@@ -57,6 +65,18 @@ title: DevSecOps Capability Model
       const data = Object.values(rawData.principles);
 
       // wrangle data for spider chart
+      const scores = [];
+      const teams=Object.keys(data[0].scores);
+      teams.forEach(team => {
+        scores.push(data.reduce((acc, el) => {
+        acc.push({
+          axis: el.principle.value,
+          value: el.scores[team]
+        });
+        return acc;
+      }, []));
+      });
+
       const economistScore = data.reduce((acc, el) => {
         acc.push({
           axis: el.principle.value,
@@ -73,7 +93,7 @@ title: DevSecOps Capability Model
       }, []);
 
       // render spider chart
-      RadarChart(".radarChart", [economistScore, eiuScore], radarChartOptions);
+      RadarChart(".radarChart", scores, radarChartOptions);
 
       // render table
       generateTable(".principles-table", rawData.headings, data, radarChartOptions);
