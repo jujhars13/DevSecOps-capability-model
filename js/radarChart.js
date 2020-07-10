@@ -20,9 +20,9 @@ function RadarChart(id, data, options) {
     opacityCircles: 0.1, //The opacity of the circles of each blob
     strokeWidth: 2, //The width of the stroke around each blob
     roundStrokes: false, // If true the area and stroke will follow a round path (cardinal-closed)
-    color: d3.scale.category10(), // Color function http://bl.ocks.org/aaizemberg/78bd3dade9593896a59d
+    color: d3.scale.category10() // Color function http://bl.ocks.org/aaizemberg/78bd3dade9593896a59d
   };
-  console.log(data);
+
   //Put all of the options into a variable called cfg
   if ("undefined" !== typeof options) {
     for (var i in options) {
@@ -258,7 +258,7 @@ function RadarChart(id, data, options) {
     .append("g")
     .attr("class", "radarCircleWrapper");
 
-  //Append a set of invisible circles on top for the mouseover pop-up
+  // Append a set of invisible circles on top for the mouseover pop-up
   blobCircleWrapper
     .selectAll(".radarInvisibleCircle")
     .data(function (d, i) {
@@ -288,6 +288,8 @@ function RadarChart(id, data, options) {
 
   // Set up the small tooltip for when you hover over a circle
   var tooltip = g.append("text").attr("class", "popover").style("opacity", 0);
+
+
 
   /////////////////////////////////////////////////////////
   /////////////////// Helper Function /////////////////////
