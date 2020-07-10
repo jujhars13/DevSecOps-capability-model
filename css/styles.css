@@ -11,8 +11,11 @@ body {
   text-align: center;
 }
 
+.capitilise{
+  text-transform: capitalize;
+}
+
 .legend {
-  font-family: "Raleway", sans-serif;
   fill: #333333;
 }
 
@@ -21,10 +24,6 @@ body {
 }
 
 th {
-  text-transform: capitalize;
-}
-
-.capitilise{
   text-transform: capitalize;
 }
 
