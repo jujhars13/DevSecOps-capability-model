@@ -8,6 +8,8 @@ All the raw data is in `data/tableData.json`
 
 Deployed using github-pages to [](https://devsecops.jujhar.com)
 
+Fork this radar and modify `data/tableData.json` to rate your own teams/organisation.
+
 ## Inspired by
 
 Influenced and inspired by

@@ -1,0 +1,39 @@
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: .975rem;
+  font-weight: 300;
+  fill: #242424;
+  cursor: default;
+}
+
+.center {
+  text-align: center;
+}
+
+.legend {
+  font-family: "Raleway", sans-serif;
+  fill: #333333;
+}
+
+.tooltip {
+  fill: #333333;
+}
+
+th {
+  text-transform: capitalize;
+}
+
+.capitilise{
+  text-transform: capitalize;
+}
+
+th.des:after {
+  content: "\21E9";
+}
+
+th.aes:after {
+  content: "\21E7";
+}
+
+.forkme{transform:rotate(45deg);background-color:#FFF;overflow:hidden;position:fixed;z-index:1800;width:240px;right:-60px;top:46px;border-style:solid;border-color:#7B7979}.forkme a{color:#404040;display:block;font:13px Helvetica Neue,Arial,sans-serif;margin:0.05em 0px 0.075em;padding:0.6em;text-align:center;text-decoration:none}

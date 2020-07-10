@@ -1,5 +1,11 @@
 {
-  "headings": ["principle", "level 1", "level 2", "level 3", "level 4"],
+  "headings": [
+    { "title": "principle", "description": "" },
+    { "title": "level 1", "description": "Some adoption/attempts of basic best practices" },
+    { "title": "level 2", "description": "Approaching majority adoption of basic best practices" },
+    { "title": "level 3", "description": "Comprehensive adoption of best practices" },
+    { "title": "level 4", "description": "Advanced implementation of principles" }
+  ],
   "principles": [
     {
       "principle": {
@@ -116,8 +122,8 @@
       },
       "scores": {
         "team1": 0.5,
-        "team2": 0.1,
-        "team3": 0.6
+        "team2": 0.45,
+        "team3": 0.7
       }
     },
     {
@@ -226,22 +232,23 @@
         "value": "Power-oriented culture",
         "description": "Very limited scope of responsibility, minimal cooperation, novelty is not welcomed, information is hidden",
         "questions": [
-        "Do team members feel fear of asking for feedback?",
-        "Is there a punitive culture?",
-        "Is cross-communication discouraged?",
-        "Do employees have little responsibility?",
-        "Is information readily available?"
-      ]
+          "Do team members feel fear of asking for feedback?",
+          "Is there a punitive culture?",
+          "Is cross-communication discouraged?",
+          "Do employees have little responsibility?",
+          "Is information readily available?"
+        ]
       },
       "level 2": {
         "value": "Rule-oriented culture",
         "description": "Modest cooperation, rule-following behaviour, narrow responsibility, novelty may lead to problems",
         "questions": [
-        "Is the organisation fair?",
-        "Does novelty leads to problems?",
-        "Focus on departemental goals",
-        "Failure leads to seek justice",
-        "Is information shared?" ]
+          "Is the organisation fair?",
+          "Does novelty leads to problems?",
+          "Focus on departemental goals",
+          "Failure leads to seek justice",
+          "Is information shared?"
+        ]
       },
       "level 3": {
         "value": "Trust-oriented culture",
@@ -268,7 +275,7 @@
       },
       "scores": {
         "team1": 0.7,
-        "team2": 0.3,
+        "team2": 0.1,
         "team3": 0.2
       }
     }

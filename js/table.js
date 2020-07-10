@@ -23,17 +23,18 @@ function generateTable(id, headings, data, options) {
 
   const table = d3.select(id).append("table").attr("class", "table table-striped");
 
-  // table headers
-  const titles = Object.values(headings);
+  // table headers w/ popovers
   const headers = table
     .append("thead")
     .attr("class", "thead-dark")
     .append("tr")
     .selectAll("th")
-    .data(titles)
+    .data(headings)
     .enter()
     .append("th")
-    .text((d) => d)
+    .attr("data-content", (d) => d.description)
+    .attr("data-toggle", "popover")
+    .text((d) => d.title)
     .on("click", (d) => {
       headers.attr("class", "header");
       if (options.sortAscending) {
@@ -53,15 +54,15 @@ function generateTable(id, headings, data, options) {
   rows
     .selectAll("td")
     .data((data) => {
-      return titles.map((title) => {
+      return headings.map((heading) => {
         let questions = [];
-        if ("questions" in data[title]) {
-          questions = data[title].questions;
+        if ("questions" in data[heading.title]) {
+          questions = data[heading.title].questions;
         }
         return {
-          value: data[title].value,
-          name: title,
-          description: data[title].description,
+          value: data[heading.title].value,
+          name: heading.title,
+          description: data[heading.title].description,
           questions
         };
       });
@@ -74,7 +75,7 @@ function generateTable(id, headings, data, options) {
       let questions = d.questions.reduce((acc, el) => {
         acc += `<li>${el}</li>`;
         return acc;
-      },"");
+      }, "");
       return `${d.description}<hr>${questions}`;
     })
     .attr("data-toggle", "popover")
