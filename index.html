@@ -2,8 +2,6 @@
 layout: default
 title: DevSecOps Capability Model
 ---
-
-<div class="container-fluid">
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script
@@ -27,7 +25,7 @@ title: DevSecOps Capability Model
 
   <h1 class="center">{{ page.title }}</h1>
 
-  <div class="radarChart center"></div>
+  <div class="radarChart center"><!-- radar goes here --></div>
 
   <h3 class="container">Principles and rank</h3>
   <div>
@@ -37,7 +35,7 @@ title: DevSecOps Capability Model
       <p>"Level 3: High adoption of practices"</p>
       <p>"Level 4: Advanced implementation of principles"</p>
     </ul>
-    <div class="principles-table"></div>
+    <div class="principles-table"><!-- table view goes here --></div>
   </div>
 
   <script src="js/radarChart.js"></script>
@@ -97,4 +95,3 @@ title: DevSecOps Capability Model
       })
       .catch((err) => console.error);
   </script>
-</div>
