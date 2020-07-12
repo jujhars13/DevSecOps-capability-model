@@ -27,4 +27,4 @@ First published by Jujhar in March 2019
 
 ## Licence
 
-[MIT](https://opensource.org/licenses/MIT) So go fill your boots.
+[MIT](/LICENSE.md) So go fill your boots.
