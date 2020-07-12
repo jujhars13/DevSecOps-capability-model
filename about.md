@@ -3,7 +3,7 @@ layout: default
 title: About DevSecOps Capability Model
 ---
 
-## About this Capability Model
+## Capability Model
 
 This capability model was derived, influenced and inspired by:
 
@@ -15,10 +15,15 @@ Thanks to [Timo Pagel](https://github.com/wurstbrot) for the [DevSecOps maturity
 
 Props to [Nadieh Bremer](http://bl.ocks.org/nbremer/21746a9668ffdf6d8242) for the original Radar D3.js code.
 
-## How to use
+
+### How to use
 
 Look at the Principles matrix and read the questions, based on your answers to the questions you can give yourself a score for that principle.
 Simply fork the project and modify the `data/tableData.json` and change the team names and scores to model your organisation. Or even add your own principles to model your organisations capability needs.
+
+## Observability strategy
+
+First published by Jujhar in March 2019
 
 ## Licence
 
