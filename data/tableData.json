@@ -127,9 +127,11 @@
         "questions": []
       },
       "level 4": {
-        "value": "max Security",
+        "value": "Max security and compliance w/ regular automated scanning and quick remediation",
         "description": "You need maximum really have some Security at least",
-        "questions": []
+        "questions": [
+          "Do your cloud accounts pass the CIS foundations benchmark v1.2"
+        ]
       },
       "scores": {
         "team1": 0.5,
