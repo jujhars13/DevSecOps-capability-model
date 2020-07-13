@@ -36,8 +36,8 @@ docker run -it --rm \
 # `npm install -g reload`
 (cd _site && reload -e "html|js|css|json")
 
-# one time build assets into _site
-# NB you don't need to do this to publish - Github does it automatically on commit
+# If you're not publishing to github pages use this command to one time build assets into _site and then publish to a S3 static bucket or old school server
+# NB you don't need to do this to publish via github pages - Github does it automatically on commit
 docker run --rm -v \
   ${PWD}:/srv/jekyll \
   jekyll/jekyll \

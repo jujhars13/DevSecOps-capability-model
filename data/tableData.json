@@ -4,7 +4,7 @@
     { "title": "level 1", "description": "Some adoption/attempts of basic best practices" },
     { "title": "level 2", "description": "Approaching majority adoption of basic best practices" },
     { "title": "level 3", "description": "Comprehensive adoption of best practices" },
-    { "title": "level 4", "description": "Advanced implementation of principles" }
+    { "title": "level 4", "description": "Advanced implementation of principles across the board" }
   ],
   "principles": [
     {
@@ -63,8 +63,8 @@
         "questions": ["Continuous Improvement", "Continuous Integration", "Continuous Delivery"]
       },
       "level 1": {
-        "value": "Some CI/CD",
-        "description": "You should really have some CI/CD at least",
+        "value": "Basic CI/CD w/ lots of manual steps",
+        "description": "You have a little CI/CD",
         "questions": [
           "Do you release multiple times an month?",
           "Your lead time for changes is between 1 week and 1 month",
@@ -72,8 +72,8 @@
         ]
       },
       "level 2": {
-        "value": "more CI/CD",
-        "description": "You should have some CI/CD at least",
+        "value": "Some CI/CD and some tests",
+        "description": "You have some CI/CD with the occasional manual deployment steps",
         "questions": [
           "Do you release multiple times a week?",
           "Your lead time for changes is between 1 week and 1 month",
@@ -81,22 +81,27 @@
         ]
       },
       "level 3": {
-        "value": "even more CI/CD",
-        "description": "You have to have really have some CI/CD at least",
+        "value": "comprehensive CI/CD with solid & stable test suite",
+        "description": "You have good CI/CD best practices and a regular deployment cadence",
         "questions": [
           "Do you release multiple times a day?",
           "Your lead time for changes is between 1 day and 1 week",
-          "Your change failure rate is between 0-20%"
+          "Your change failure rate is between 0-20%",
+          "You can do blue/green deployments"
         ]
       },
       "level 4": {
-        "value": "max CI/CD",
-        "description": "You need maximum really have some CI/CD at least",
+        "value": "max CI/CD, tests and scans",
+        "description": "You follow all best practice CI/CD and deploy on a high frequency",
         "questions": [
           "Do you release multiple times an day? > 20 times ",
           "Can you confidently deploy on a Friday?",
           "Your lead time for changes is between 1 hour and 1 day",
-          "Your change failure rate is between 0-10%"
+          "Your change failure rate is between 0-10%",
+          "You regularly do canary deployments",
+          "You make extensive use of feature flags",
+          "You build and test artifacts in a virtual environment",
+          "You scan for security vulnerabilities as part of CI/CD"
         ]
       },
       "scores": {
@@ -108,21 +113,21 @@
     {
       "principle": {
         "value": "Security",
-        "description": "How quickly can we restore from backups",
+        "description": "How secure are our systems and do we have a good view of attack vectors",
         "questions": []
       },
       "level 1": {
-        "value": "Some Security",
+        "value": "Basic Security practices",
         "description": "You should really have some Security at least",
         "questions": []
       },
       "level 2": {
-        "value": "more Security",
+        "value": "Some scanning with poor remediation",
         "description": "You should have some Security at least",
         "questions": []
       },
       "level 3": {
-        "value": "even more Security",
+        "value": "Regular scanning and remediation",
         "description": "You have to have really have some Security at least",
         "questions": []
       },
@@ -153,12 +158,12 @@
       "level 2": {
         "value": "more Availability",
         "description": "You should have some Availability at least",
-        "questions": ["Your MTTR (mean time to rteam2very) during an incident avgerages ~ 1d"]
+        "questions": ["Your MTTR (mean time to recovery) during an incident averages ~ 1d"]
       },
       "level 3": {
         "value": "even more Availability",
         "description": "You have to have really have some Availability at least",
-        "questions": ["Your MTTR (mean time to recovery) during an incident avgerages < 6hr"]
+        "questions": ["Your MTTR (mean time to recovery) during an incident averages < 6hr"]
       },
       "level 4": {
         "value": "max Availability",

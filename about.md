@@ -5,6 +5,13 @@ title: About DevSecOps Capability Model
 
 ## Capability Model
 
+Use this capability model to map where you are on the DevSecOps journey.
+
+Look at the principles matrix and read the questions, based on your answers to the questions and score yourself for that principle.
+Simply fork the project and modify the `data/tableData.json` and change the team names and scores to model your organisation. Or even add your own principles to model your organisations capability needs.
+
+### Thanks
+
 This capability model was derived, influenced and inspired by:
 
 [Gene Kim](https://twitter.com/RealGeneKim), [Jez Humble](https://twitter.com/jezhumble) and [Dr. Nicole Forsgren](https://twitter.com/nicolefv) via the books:
@@ -15,11 +22,6 @@ Thanks to [Timo Pagel](https://github.com/wurstbrot) for the [DevSecOps maturity
 
 Props to [Nadieh Bremer](http://bl.ocks.org/nbremer/21746a9668ffdf6d8242) for the original Radar D3.js code.
 
-
-### How to use
-
-Look at the principles matrix and read the questions, based on your answers to the questions and score yourself for that principle.
-Simply fork the project and modify the `data/tableData.json` and change the team names and scores to model your organisation. Or even add your own principles to model your organisations capability needs.
 
 ## Observability strategy
 
