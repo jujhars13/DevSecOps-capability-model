@@ -10,7 +10,7 @@
     {
       "principle": {
         "value": "Observability",
-        "description": "How much observability do you have on your systems environments, inputs, outputs and behaviours. Do you have enough information on how your system runs to make improvements/solve problems",
+        "description": "How much observability do you have on your systems environments, inputs, outputs and behaviour. Do you have enough information on how your system runs to make improvements/solve problems",
         "questions": []
       },
       "level 1": {
@@ -25,19 +25,30 @@
         ]
       },
       "level 2": {
-        "value": "more logging",
+        "value": "Basic instrumentation of portions of your stack",
         "description": "You should have some logging at least",
-        "questions": []
+        "questions": [
+          "Do you at least have APM turned on",
+          "Are your application logs going into a log aggregation platform"
+        ]
       },
       "level 3": {
-        "value": "even more logging",
+        "value": "Decent coverage across the stack",
         "description": "You have to have really have some logging at least",
-        "questions": []
+        "questions": ["Are your server/infrastructure logs going into a log aggregation platform"]
       },
       "level 4": {
-        "value": "Max Instrumentation and data points",
-        "description": "You can see and model your system behaviours.  You've got complete coverage of every transaction from start to finish",
-        "questions": []
+        "value": "Max Instrumentation and SLO driven dashboards",
+        "description": "You can see and model your system behaviours.  You've got complete coverage of every transaction from start to finish.  Metrics aggregate into service quality dashboards and alerting systems",
+        "questions": [
+          "Can you quickly triage issues and hone in on problems very shortly after they arise",
+          "Do you have multiple overlapping views on system health",
+          "Do you have aggregate metrics that link to SLOs (SLAs)?",
+          "Do you have a good view on what \"normal\" looks like in terms of system behaviour",
+          "Do you have balanced and continuously tweaked alerting on abnormal system behaviours?",
+          "Can you easily track the effect of a release to production?",
+          "Do you have extensive system dashboards that are used by technical and non-technical alike on a regular basis"
+        ]
       },
       "scores": {
         "team1": 0.8,

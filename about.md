@@ -18,7 +18,7 @@ Props to [Nadieh Bremer](http://bl.ocks.org/nbremer/21746a9668ffdf6d8242) for th
 
 ### How to use
 
-Look at the Principles matrix and read the questions, based on your answers to the questions you can give yourself a score for that principle.
+Look at the principles matrix and read the questions, based on your answers to the questions and score yourself for that principle.
 Simply fork the project and modify the `data/tableData.json` and change the team names and scores to model your organisation. Or even add your own principles to model your organisations capability needs.
 
 ## Observability strategy
