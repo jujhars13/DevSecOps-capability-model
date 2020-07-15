@@ -1,9 +1,9 @@
 {
   "headings": [
     { "title": "principle", "description": "" },
-    { "title": "level 1", "description": "Some adoption/attempts of basic best practices" },
-    { "title": "level 2", "description": "Approaching majority adoption of basic best practices" },
-    { "title": "level 3", "description": "Comprehensive adoption of best practices" },
+    { "title": "level 1", "description": "Low adoption/attempts of basic best practices" },
+    { "title": "level 2", "description": "Some minority adoption of basic best practices" },
+    { "title": "level 3", "description": "Majority adoption of best practices" },
     { "title": "level 4", "description": "Advanced implementation of principles across the board" }
   ],
   "principles": [
@@ -14,11 +14,11 @@
         "questions": []
       },
       "level 1": {
-        "value": "Out of the box",
+        "value": "Out of the box - only",
         "description": "Just the basics you get from free from Cloudwatch, htop, task manager etc.",
         "questions": [
           "Do you have to have to add lots of debug statements when there's a prod issue?",
-          "Prod issues often catch you off guard?",
+          "Do prod issues often catch you off guard?",
           "You have little idea of how much CPU/Disk/Memory/DB is being used?",
           "You have no accurate handle on how many rpm your service is handling at a given time",
           "You have no historical view on application performance"
@@ -29,11 +29,11 @@
         "description": "You should have some logging at least",
         "questions": [
           "Do you at least have APM turned on",
-          "Are your application logs going into a log aggregation platform"
+          "Are at least your application logs going into a log aggregation platform"
         ]
       },
       "level 3": {
-        "value": "Decent coverage across the stack",
+        "value": "Decent coverage over all layers of the stack",
         "description": "You have to have really have some logging at least",
         "questions": ["Are your server/infrastructure logs going into a log aggregation platform"]
       },
@@ -42,10 +42,11 @@
         "description": "You can see and model your system behaviours.  You've got complete coverage of every transaction from start to finish.  Metrics aggregate into service quality dashboards and alerting systems",
         "questions": [
           "Can you quickly triage issues and hone in on problems very shortly after they arise",
-          "Do you have multiple overlapping views on system health",
+          "Do you have multiple overlapping views on system health?",
           "Do you have aggregate metrics that link to SLOs (SLAs)?",
-          "Do you have a good view on what \"normal\" looks like in terms of system behaviour",
-          "Do you have balanced and continuously tweaked alerting on abnormal system behaviours?",
+          "Do you have alerting and recording of your SLO performance over time?",
+          "Do you have a good view on what \"normal\" looks like in terms of system behaviour?",
+          "Do you have balanced and continuously improved alerting on abnormal system behaviour?",
           "Can you easily track the effect of a release to production?",
           "Do you have extensive system dashboards that are used by technical and non-technical alike on a regular basis"
         ]
@@ -81,7 +82,7 @@
         ]
       },
       "level 3": {
-        "value": "comprehensive CI/CD with solid & stable test suite",
+        "value": "Comprehensive CI/CD with solid & stable test suite",
         "description": "You have good CI/CD best practices and a regular deployment cadence",
         "questions": [
           "Do you release multiple times a day?",
@@ -91,7 +92,7 @@
         ]
       },
       "level 4": {
-        "value": "max CI/CD, tests and scans",
+        "value": "Max CI/CD, tests and scans",
         "description": "You follow all best practice CI/CD and deploy on a high frequency",
         "questions": [
           "Do you release multiple times an day? > 20 times ",
@@ -151,22 +152,22 @@
         "questions": ["Can you rteam2ver quickly from incidents low MTTR?"]
       },
       "level 1": {
-        "value": "Some Availability",
+        "value": "TODO",
         "description": "You should really have some Availability at least",
         "questions": ["Your MTTR (mean time to rteam2very) during an incident avgerages ~ 1d"]
       },
       "level 2": {
-        "value": "more Availability",
+        "value": "TODO",
         "description": "You should have some Availability at least",
         "questions": ["Your MTTR (mean time to recovery) during an incident averages ~ 1d"]
       },
       "level 3": {
-        "value": "even more Availability",
+        "value": "TODO",
         "description": "You have to have really have some Availability at least",
         "questions": ["Your MTTR (mean time to recovery) during an incident averages < 6hr"]
       },
       "level 4": {
-        "value": "max Availability",
+        "value": "TODO",
         "description": "You need maximum Availability",
         "questions": ["Do you have a low and continuously improving MTTR? avg < 1hr"]
       },
@@ -183,22 +184,22 @@
         "questions": []
       },
       "level 1": {
-        "value": "Some Durability",
+        "value": "TODO",
         "description": "You should really have some Durability at least",
         "questions": []
       },
       "level 2": {
-        "value": "more Durability",
+        "value": "TODO",
         "description": "You should have some Durability at least",
         "questions": []
       },
       "level 3": {
-        "value": "even more Durability",
+        "value": "TODO",
         "description": "You have to have really have some Durability at least",
         "questions": []
       },
       "level 4": {
-        "value": "max Durability",
+        "value": "TODO",
         "description": "You need maximum really have some Durability at least",
         "questions": []
       },
@@ -206,38 +207,6 @@
         "team1": 0.3,
         "team2": 0.1,
         "team3": 0.6
-      }
-    },
-    {
-      "principle": {
-        "value": "Data",
-        "description": "How quickly can we restore from backups",
-        "questions": []
-      },
-      "level 1": {
-        "value": "Some Data",
-        "description": "You should really have some Data at least",
-        "questions": []
-      },
-      "level 2": {
-        "value": "more Data",
-        "description": "You should have some Data at least",
-        "questions": []
-      },
-      "level 3": {
-        "value": "even more Data",
-        "description": "You have to have really have some Data at least",
-        "questions": []
-      },
-      "level 4": {
-        "value": "max Data",
-        "description": "You need maximum really have some Data at least",
-        "questions": []
-      },
-      "scores": {
-        "team1": 0.2,
-        "team2": 0.1,
-        "team3": 0.5
       }
     },
     {
