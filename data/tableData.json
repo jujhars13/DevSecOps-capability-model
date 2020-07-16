@@ -140,12 +140,12 @@
       "level 3": {
         "value": "Regular scanning and remediation",
         "description": "You have to have really have some Security at least",
-        "questions": []
+        "questions": ["Do your cloud accounts pass the CIS foundations benchmark v1.2"]
       },
       "level 4": {
         "value": "Max security and compliance w/ regular automated scanning and quick remediation",
         "description": "You need maximum really have some Security at least",
-        "questions": ["Do your cloud accounts pass the CIS foundations benchmark v1.2"]
+        "questions": ["You have implemented a container security strategy"]
       },
       "scores": {
         "team 1": 0.5,
