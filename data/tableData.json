@@ -43,7 +43,7 @@
         "questions": [
           "Can you quickly triage issues and hone in on problems very shortly after they arise",
           "Do you have multiple overlapping views on system health?",
-          "Do you have aggregate metrics that link to SLOs (SLAs)?",
+          "Do you have aggregate metrics that inform your SLOs (SLAs)?",
           "Do you have alerting and recording of your SLO performance over time?",
           "Do you have a good view on what \"normal\" looks like in terms of system behaviour?",
           "Do you have balanced and continuously improved alerting on abnormal system behaviour?",
@@ -52,16 +52,21 @@
         ]
       },
       "scores": {
-        "team1": 0.8,
-        "team2": 0.1,
-        "team3": 0.3
+        "team 1": 0.8,
+        "team 2": 0.1,
+        "team n": 0.3
       }
     },
     {
       "principle": {
-        "value": "Deployment and Delivery",
-        "description": "Enable Fast Flow from development to production and reliable releases by standardising work, reducing variability and batch sizes",
-        "questions": ["Continuous Improvement", "Continuous Integration", "Continuous Delivery"]
+        "value": "CI/CD",
+        "description": "Computers perform repetitive tasks, people solve problems. </br>  Enable Fast Flow from development to production and reliable releases by standardising work, reducing variability and batch sizes",
+        "questions": [
+          "Continuous Improvement",
+          "Continuous Integration",
+          "Continuous Delivery",
+          "Relentlessly pursue continuous improvement"
+        ]
       },
       "level 1": {
         "value": "Basic CI/CD w/ lots of manual steps",
@@ -88,13 +93,17 @@
           "Do you release multiple times a day?",
           "Your lead time for changes is between 1 day and 1 week",
           "Your change failure rate is between 0-20%",
-          "You can do blue/green deployments"
+          "You can do blue/green deployments",
+          "You use version control for all production artifacts",
+          "Your deployment processes are 90% automated and any manual steps are well documented",
+          "Do you load test core components before major releases and revisions?"
         ]
       },
       "level 4": {
         "value": "Max CI/CD, tests and scans",
         "description": "You follow all best practice CI/CD and deploy on a high frequency",
         "questions": [
+          "Do you continue to pursue continuous improvement and optimisations based on your telemetry",
           "Do you release multiple times an day? > 20 times ",
           "Can you confidently deploy on a Friday?",
           "Your lead time for changes is between 1 hour and 1 day",
@@ -102,20 +111,21 @@
           "You regularly do canary deployments",
           "You make extensive use of feature flags",
           "You build and test artifacts in a virtual environment",
-          "You scan for security vulnerabilities as part of CI/CD"
+          "You scan for security vulnerabilities as part of CI/CD",
+          "Do you load test core components before major releases and revisions?"
         ]
       },
       "scores": {
-        "team1": 0.8,
-        "team2": 0.2,
-        "team3": 0.5
+        "team 1": 0.8,
+        "team 2": 0.2,
+        "team n": 0.5
       }
     },
     {
       "principle": {
         "value": "Security",
-        "description": "How secure are our systems and do we have a good view of attack vectors",
-        "questions": []
+        "description": "How secure are our systems and do we have a good view of attack vectors.",
+        "questions": ["How far left have you managed to shift security?"]
       },
       "level 1": {
         "value": "Basic Security practices",
@@ -135,26 +145,24 @@
       "level 4": {
         "value": "Max security and compliance w/ regular automated scanning and quick remediation",
         "description": "You need maximum really have some Security at least",
-        "questions": [
-          "Do your cloud accounts pass the CIS foundations benchmark v1.2"
-        ]
+        "questions": ["Do your cloud accounts pass the CIS foundations benchmark v1.2"]
       },
       "scores": {
-        "team1": 0.5,
-        "team2": 0.45,
-        "team3": 0.7
+        "team 1": 0.5,
+        "team 2": 0.45,
+        "team n": 0.7
       }
     },
     {
       "principle": {
         "value": "Availability",
         "description": "How do we keep things up and running",
-        "questions": ["Can you rteam2ver quickly from incidents low MTTR?"]
+        "questions": ["Can you recover quickly from incidents low MTTR?"]
       },
       "level 1": {
         "value": "TODO",
         "description": "You should really have some Availability at least",
-        "questions": ["Your MTTR (mean time to rteam2very) during an incident avgerages ~ 1d"]
+        "questions": ["Your MTTR (mean time to recovery) during an incident avgerages ~ 1d"]
       },
       "level 2": {
         "value": "TODO",
@@ -172,9 +180,9 @@
         "questions": ["Do you have a low and continuously improving MTTR? avg < 1hr"]
       },
       "scores": {
-        "team1": 0.8,
-        "team2": 0.1,
-        "team3": 0.3
+        "team 1": 0.8,
+        "team 2": 0.1,
+        "team n": 0.3
       }
     },
     {
@@ -204,9 +212,9 @@
         "questions": []
       },
       "scores": {
-        "team1": 0.3,
-        "team2": 0.1,
-        "team3": 0.6
+        "team 1": 0.3,
+        "team 2": 0.1,
+        "team n": 0.6
       }
     },
     {
@@ -261,9 +269,9 @@
         ]
       },
       "scores": {
-        "team1": 0.7,
-        "team2": 0.1,
-        "team3": 0.2
+        "team 1": 0.7,
+        "team 2": 0.1,
+        "team n": 0.2
       }
     }
   ]
