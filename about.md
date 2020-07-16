@@ -19,9 +19,9 @@ Simply fork the project and modify the `data/tableData.json` and change the team
 
 This capability model was derived, influenced and inspired by:
 
-[Gene Kim](https://twitter.com/RealGeneKim), [Jez Humble](https://twitter.com/jezhumble) and [Dr. Nicole Forsgren](https://twitter.com/nicolefv) via the books:
-- [The Unicorn Project](https://www.amazon.co.uk/dp/1942788762)
-- [Accelerate](https://www.amazon.co.uk/dp/1942788339)
+- [Gene Kim](https://twitter.com/RealGeneKim), [Jez Humble](https://twitter.com/jezhumble) and [Dr. Nicole Forsgren](https://twitter.com/nicolefv) via the publications:
+  - [The Unicorn Project](https://www.amazon.co.uk/dp/1942788762)
+  - [Accelerate](https://www.amazon.co.uk/dp/1942788339)
 - [Making Matrixed Organizations Successful with DevOps](https://itrevolution.com/forum-paper-downloads/)
 - [Modernizing IT Operations in the Age of DevOps](https://itrevolution.com/forum-paper-downloads/)
 - [DevOps Automated Governance Reference Architecture ](https://itrevolution.com/forum-paper-downloads/)
@@ -29,7 +29,7 @@ This capability model was derived, influenced and inspired by:
 
 Thanks to [Timo Pagel](https://github.com/wurstbrot) for the [DevSecOps maturity project](https://dsomm.timo-pagel.de/index.php) which was the original stimulus for this project.
 
-Props to [Nadieh Bremer](http://bl.ocks.org/nbremer/21746a9668ffdf6d8242) for the original Radar D3.js code.
+Props to [Nadieh Bremer](http://bl.ocks.org/nbremer/21746a9668ffdf6d8242) for the original Radar [d3.js](https://d3js.org/) radar code.
 
 
 ## Observability Strategy
