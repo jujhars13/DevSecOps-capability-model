@@ -3,11 +3,6 @@ layout: default
 title: About DevSecOps Capability Model
 ---
 
-## DevSecOps
-
-Why? Sec in DevSecOps
-The industry has been pushing to shift elements of security (in particular AppSec and CloudSec ) as left as possible and it turns out that DevOps centric teams are really well placed to do some of this work
-
 ## Capability Model
 
 Use this capability model to map where you are on the DevSecOps journey.
@@ -35,6 +30,10 @@ Props to [Nadieh Bremer](http://bl.ocks.org/nbremer/21746a9668ffdf6d8242) for th
 ## Observability Strategy
 
 First published by Jujhar in March 2019
+
+## DevSecOps
+
+Why the **Sec** in Dev**Sec**Ops? For the last two years the industry has been pushing to shift elements of security (in particular AppSec and CloudSec ) as left as possible. It turns out that DevOps enfranchised teams are well placed to do this work.
 
 ## Licence
 

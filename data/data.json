@@ -19,7 +19,7 @@
         "questions": [
           "Do you have to have to add lots of debug statements when there's a prod issue?",
           "Do prod issues often catch you off guard?",
-          "You have little idea of how much CPU/Disk/Memory/DB is being used?",
+          "You have little idea of how much CPU/Disk/Memory/DB is being used by your service?",
           "You have no accurate handle on how many rpm your service is handling at a given time",
           "You have no historical view on application performance"
         ]
@@ -29,30 +29,35 @@
         "description": "You should have some logging at least",
         "questions": [
           "Do you at least have APM turned on",
-          "Are at least your application logs going into a log aggregation platform"
+          "Are your application logs going into a log aggregation platform",
+          "Do you have a historical view on application performance"
         ]
       },
       "level 3": {
         "value": "Decent coverage over all layers of the stack",
         "description": "You have to have really have some logging at least",
-        "questions": ["Are your server/infrastructure logs going into a log aggregation platform"]
+        "questions": [
+          "Are your server/infrastructure logs going into a log aggregation platform?",
+          "Can you easily track the effect of a release to production?",
+          "Do you have multiple overlapping views on system health?",
+          "Metrics aggregate into service quality dashboards and alerting systems"
+        ]
       },
       "level 4": {
         "value": "Max Instrumentation and SLO driven dashboards",
-        "description": "You can see and model your system behaviours.  You've got complete coverage of every transaction from start to finish.  Metrics aggregate into service quality dashboards and alerting systems",
+        "description": "You can see and model your system behaviours.",
         "questions": [
           "Can you quickly triage issues and hone in on problems very shortly after they arise",
-          "Do you have multiple overlapping views on system health?",
           "Do you have aggregate metrics that inform your SLOs (SLAs)?",
           "Do you have alerting and recording of your SLO performance over time?",
           "Do you have a good view on what \"normal\" looks like in terms of system behaviour?",
           "Do you have balanced and continuously improved alerting on abnormal system behaviour?",
-          "Can you easily track the effect of a release to production?",
+          "You've got complete coverage of every transaction from start to finish",
           "Do you have extensive system dashboards that are used by technical and non-technical alike on a regular basis"
         ]
       },
       "scores": {
-        "team 1": 0.8,
+        "team 1": 0.7,
         "team 2": 0.1,
         "team n": 0.3
       }
@@ -60,8 +65,10 @@
     {
       "principle": {
         "value": "CI/CD",
-        "description": "Computers perform repetitive tasks, people solve problems. </br>  Enable Fast Flow from development to production and reliable releases by standardising work, reducing variability and batch sizes",
+        "description": "Enable fast flow from development to production and reliable releases",
         "questions": [
+          "Standardise work",
+          "reduce variability and batch sizes",
           "Continuous Improvement",
           "Continuous Integration",
           "Continuous Delivery",
@@ -117,39 +124,39 @@
       },
       "scores": {
         "team 1": 0.8,
-        "team 2": 0.2,
+        "team 2": 0.1,
         "team n": 0.5
       }
     },
     {
       "principle": {
         "value": "Security",
-        "description": "How secure are our systems and do we have a good view of attack vectors.",
+        "description": "How secure are our systems and do we have a good view of attack vectors",
         "questions": ["How far left have you managed to shift security?"]
       },
       "level 1": {
         "value": "Basic Security practices",
-        "description": "You should really have some Security at least",
+        "description": "You have little to no Security",
         "questions": []
       },
       "level 2": {
         "value": "Some scanning with poor remediation",
-        "description": "You should have some Security at least",
+        "description": "You have some Security",
         "questions": []
       },
       "level 3": {
         "value": "Regular scanning and remediation",
-        "description": "You have to have really have some Security at least",
+        "description": "You acceptable Security",
         "questions": ["Do your cloud accounts pass the CIS foundations benchmark v1.2"]
       },
       "level 4": {
         "value": "Max security and compliance w/ regular automated scanning and quick remediation",
-        "description": "You need maximum really have some Security at least",
+        "description": "You have maximum security",
         "questions": ["You have implemented a container security strategy"]
       },
       "scores": {
-        "team 1": 0.5,
-        "team 2": 0.45,
+        "team 1": 0.3,
+        "team 2": 0.1,
         "team n": 0.7
       }
     },
@@ -157,12 +164,16 @@
       "principle": {
         "value": "Availability",
         "description": "How do we keep things up and running",
-        "questions": ["Can you recover quickly from incidents low MTTR?"]
+        "questions": [
+          "Can you recover quickly from incidents a low MTTR?",
+          "Can you detect incidents ahead of time?",
+          "Can you failover to backup systems"
+        ]
       },
       "level 1": {
         "value": "TODO",
         "description": "You should really have some Availability at least",
-        "questions": ["Your MTTR (mean time to recovery) during an incident avgerages ~ 1d"]
+        "questions": ["Your MTTR (mean time to recovery) during an incident averages ~ 1d"]
       },
       "level 2": {
         "value": "TODO",
@@ -180,7 +191,7 @@
         "questions": ["Do you have a low and continuously improving MTTR? avg < 1hr"]
       },
       "scores": {
-        "team 1": 0.8,
+        "team 1": 0.7,
         "team 2": 0.1,
         "team n": 0.3
       }
@@ -193,26 +204,26 @@
       },
       "level 1": {
         "value": "TODO",
-        "description": "You should really have some Durability at least",
+        "description": "You have almost no Durability",
         "questions": []
       },
       "level 2": {
         "value": "TODO",
-        "description": "You should have some Durability at least",
+        "description": "You have low Durability",
         "questions": []
       },
       "level 3": {
         "value": "TODO",
-        "description": "You have to have really have some Durability at least",
+        "description": "You have acceptable Durability",
         "questions": []
       },
       "level 4": {
         "value": "TODO",
-        "description": "You need maximum really have some Durability at least",
+        "description": "You have maximum Durability",
         "questions": []
       },
       "scores": {
-        "team 1": 0.3,
+        "team 1": 0.4,
         "team 2": 0.1,
         "team n": 0.6
       }
@@ -240,7 +251,7 @@
         "questions": [
           "Is the organisation fair?",
           "Does novelty leads to problems?",
-          "Focus on departemental goals",
+          "Focus on departmental goals",
           "Failure leads to seek justice",
           "Is information shared?"
         ]
@@ -270,7 +281,7 @@
       },
       "scores": {
         "team 1": 0.7,
-        "team 2": 0.1,
+        "team 2": 0.2,
         "team n": 0.2
       }
     }
