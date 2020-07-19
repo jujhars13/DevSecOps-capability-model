@@ -19,7 +19,7 @@
         "questions": [
           "Do you have to have to add lots of debug statements when there's a prod issue?",
           "Do prod issues often catch you off guard?",
-          "You have little idea of how much CPU/Disk/Memory/DB is being used by your service?",
+          "You have little idea of how much Compute/Disk/Memory is being used by your components?",
           "You have no accurate handle on how many rpm your service is handling at a given time",
           "You have no historical view on application performance"
         ]
@@ -135,7 +135,7 @@
         "questions": ["How far left have you managed to shift security?"]
       },
       "level 1": {
-        "value": "Basic Security practices",
+        "value": "Basic security practices",
         "description": "You have little to no Security",
         "questions": []
       },
@@ -157,7 +157,7 @@
       "scores": {
         "team 1": 0.3,
         "team 2": 0.1,
-        "team n": 0.7
+        "team n": 0.4
       }
     },
     {
@@ -172,22 +172,22 @@
       },
       "level 1": {
         "value": "TODO",
-        "description": "You should really have some Availability at least",
+        "description": "You have little Availability ",
         "questions": ["Your MTTR (mean time to recovery) during an incident averages ~ 1d"]
       },
       "level 2": {
         "value": "TODO",
-        "description": "You should have some Availability at least",
+        "description": "You have some Availability",
         "questions": ["Your MTTR (mean time to recovery) during an incident averages ~ 1d"]
       },
       "level 3": {
         "value": "TODO",
-        "description": "You have to have really have some Availability at least",
+        "description": "You have good Availability",
         "questions": ["Your MTTR (mean time to recovery) during an incident averages < 6hr"]
       },
       "level 4": {
         "value": "TODO",
-        "description": "You need maximum Availability",
+        "description": "You have maximum Availability",
         "questions": ["Do you have a low and continuously improving MTTR? avg < 1hr"]
       },
       "scores": {
