@@ -145,16 +145,19 @@
         "questions": []
       },
       "level 3": {
-        "value": "Regular scanning and remediation",
+        "value": "Regular scanning and quick remediation",
         "description": "You acceptable Security",
-        "questions": ["Do your cloud accounts pass the CIS foundations benchmark v1.2"]
+        "questions": ["Do your cloud accounts pass the CIS foundations benchmark v1.2",
+          "Audit logs saved and tracked for at least 1 year"
+        ]
       },
       "level 4": {
         "value": "Max security and compliance w/ regular automated scanning and quick remediation",
         "description": "You have maximum security",
         "questions": [
           "You have implemented a container security strategy",
-          "You have a team that specialised in Incident response training"
+          "You have a team that specialised in Incident response training",
+          "Audit logs saved and tracked for at least 5 years if incident found"
         ]
       },
       "scores": {
