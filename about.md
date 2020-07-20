@@ -8,9 +8,9 @@ title: About DevSecOps Capability Model
 Use this capability model to map where you are on the DevSecOps journey.
 
 Look at the principles matrix and read the questions, based on your answers to the questions and score yourself for that principle.
-Simply fork the project and modify the `data/tableData.json` and change the team names and scores to model your organisation. Or even add your own principles to model your organisations capability needs.
+Simply fork the project and modify the `data/data.json` and change the team names and scores to model your organisation. Or even add your own principles to model your organisations capability needs.
 
-### Thanks
+## Thanks
 
 This capability model was derived, influenced and inspired by:
 
@@ -37,4 +37,4 @@ Why the **Sec** in Dev**Sec**Ops? For the last two years the industry has been p
 
 ## Licence
 
-[MIT](/LICENSE.md) So go fill your boots.
+[MIT](/LICENSE.md) So go [fill your boots](https://dictionary.cambridge.org/dictionary/english/fill-your-boots).
