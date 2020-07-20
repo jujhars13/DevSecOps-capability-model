@@ -159,7 +159,8 @@
           "You have a well defined and observed remediation policy covering different types of issues",
           "You have implemented a container security strategy",
           "You have a team that have undergone Incident response training",
-          "Audit logs saved and tracked for at least 5 years if a (suspected) incident is found"
+          "Audit logs saved and tracked for at least 5 years if a (suspected) incident is found",
+          "You use trusted, evergreen base images with regular releases"
         ]
       },
       "scores": {
