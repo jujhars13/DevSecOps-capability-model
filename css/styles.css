@@ -7,10 +7,6 @@ body {
   cursor: default;
 }
 
-.center {
-  text-align: center;
-}
-
 .capitalize{
   text-transform: capitalize;
 }

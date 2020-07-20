@@ -13,14 +13,15 @@ function RadarChart(id, data, options) {
     margin: { top: 20, right: 20, bottom: 20, left: 20 }, //The margins of the SVG
     levels: 3, // How many levels or inner circles should there be drawn
     maxValue: 100, // What is the value that the biggest circle will represent
-    labelFactor: 1.25, // How much farther than the radius of the outer circle should the labels be placed
+    labelFactor: 1.15, // How much farther than the radius of the outer circle should the labels be placed
     wrapWidth: 60, // The number of pixels after which a label needs to be given a new line
     opacityArea: 0.35, // The opacity of the area of the blob
     dotRadius: 4, // The size of the coloured circles of each blog
     opacityCircles: 0.1, // The opacity of the circles of each blob
     strokeWidth: 2, // The width of the stroke around each blob
     roundStrokes: false, // If true the area and stroke will follow a round path (cardinal-closed)
-    color: d3.scale.category10() // Color function http://bl.ocks.org/aaizemberg/78bd3dade9593896a59d
+    color: d3.scale.category10(), // Color function http://bl.ocks.org/aaizemberg/78bd3dade9593896a59d
+    legendLabelFontSize: 15 // legend label font size in px
   };
 
   //Put all of the options into a variable called cfg
@@ -60,7 +61,7 @@ function RadarChart(id, data, options) {
   /////////////////////////////////////////////////////////
 
   //Remove whatever chart with the same id/class was present before
-  d3.select(id).select("svg").remove();
+  d3.select(id).select("svg").remove().attr("id", "radar-chart");
 
   //Initiate the radar chart SVG
   var svg = d3
@@ -153,7 +154,7 @@ function RadarChart(id, data, options) {
   axis
     .append("text")
     .attr("class", "legend")
-    .style("font-size", "11px")
+    .style("font-size", `${cfg.legendLabelFontSize}px`)
     .attr("text-anchor", "middle")
     .attr("dy", "0.35em")
     .attr("x", function (d, i) {
@@ -288,8 +289,6 @@ function RadarChart(id, data, options) {
 
   // Set up the small tooltip for when you hover over a circle
   var tooltip = g.append("text").attr("class", "popover").style("opacity", 0);
-
-
 
   /////////////////////////////////////////////////////////
   /////////////////// Helper Function /////////////////////

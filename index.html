@@ -2,80 +2,91 @@
 layout: default
 title: DevSecOps Capability Model
 ---
-  <!-- D3.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-4">{{ page.title }}</h1>
+    <p>Use this chart and data to rank and map your current progress on the DevSecOps journey and use it to drive improvement</p>
+  </div>
+</div>
 
-  <h2 class="center">{{ page.title }}</h2>
+<!-- D3.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
 
-  <div class="radarChart center"><!-- radar component goes here --></div>
+<div class="radarChart text-center"><!-- radar component goes here --></div>
 
-  <div>
+<div class="pt-4 px-4">
   <h3>Principles Matrix</h3>
   <p class="lead">More detail and justification for each of the the DevSecOps disciplines ranked above.</p>
-  <p>The minimum we want to achieve to have any sanity is <strong>level 3</strong> for almost all DecSecOps disciplines with <strong>level 4</strong> being our north star.</p>
-  <p>Hover over each section in the table below to see a list of questions which you can use
-  to self assess your maturity.</p>
-    <div class="principles-table table-responsive"><!-- table component goes here --></div>
-  </div>
+  <p>
+    The minimum we want to achieve to have any sanity is <strong>level 3</strong> for almost all DecSecOps disciplines
+    with <strong>level 4</strong> being our north star.
+  </p>
+  <p>
+    Hover over each section in the table below to see a list of questions which you can use to self assess your
+    maturity.
+  </p>
+  <div class="principles-table table-responsive "><!-- table component goes here --></div>
+</div>
 
-  <script src="js/radarChart.js"></script>
-  <script src="js/radarLegend.js"></script>
-  <script src="js/table.js"></script>
-  <script>
-    /**
-     * render D3 charts and tables
-     */
-    // radar chart dimensions and options
-    const margin = { top: 100, right: 100, bottom: 100, left: 100 };
-    const width = Math.min(1024, window.innerWidth - 10) - margin.left - margin.right;
-    const height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
-    const color = d3.scale.category10();
-    const radarChartOptions = {
-      width,
-      height,
-      margin,
-      maxValue: 1,
-      levels: 4, // how may rings
-      roundStrokes: true, // round or square edges
-      strokeWidth: 3, // The width of the stroke around each blob,
-      color
-    };
+<script src="js/radarChart.js"></script>
+<script src="js/radarLegend.js"></script>
+<script src="js/table.js"></script>
+<script>
+  /**
+   * render D3 charts and tables
+   */
+  // radar chart dimensions and options
+  const margin = { top: 100, right: 100, bottom: 100, left: 100 };
+  const width = Math.min(1024, window.innerWidth - 10) - margin.left - margin.right;
+  const height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+  const color = d3.scale.category10();
+  const radarChartOptions = {
+    width,
+    height,
+    margin,
+    maxValue: 1,
+    levels: 4, // how may rings
+    roundStrokes: true, // round or square edges
+    strokeWidth: 3, // The width of the stroke around each blob,
+    color,
+    legendLabelFontSize: 19
+  };
 
-    // fetch and render the data as a chart & table
-    fetch("data/data.json")
-      .then((response) => response.json())
-      .then((rawData) => {
-        const headings=Object.values(rawData.headings);
-        const data = Object.values(rawData.principles);
+  // fetch the data and render as a chart & table
+  fetch("data/data.json")
+    .then((response) => response.json())
+    .then((rawData) => {
+      const headings = Object.values(rawData.headings);
+      const data = Object.values(rawData.principles);
 
-        // wrangle data for spider chart
-        const teams = Object.keys(data[0].scores);
-        const scores = [];
-        teams.forEach((team) => {
-          scores.push(
-            data.reduce((acc, el) => {
-              acc.push({
-                axis: el.principle.value,
-                value: el.scores[team]
-              });
-              return acc;
-            }, [])
-          );
-        });
+      // wrangle data for spider chart
+      const teams = Object.keys(data[0].scores);
+      const scores = [];
+      teams.forEach((team) => {
+        scores.push(
+          data.reduce((acc, el) => {
+            acc.push({
+              axis: el.principle.value,
+              value: el.scores[team]
+            });
+            return acc;
+          }, [])
+        );
+      });
 
-        // render spider chart
-        RadarChart(".radarChart", scores, radarChartOptions);
+      // render spider chart
+      RadarChart(".radarChart", scores, radarChartOptions);
 
-        // render spider chart legend
-        renderChartLegends(".radarChart", teams, width, height, color);
+      // render spider chart legend
+      renderChartLegends(".radarChart", teams, width, height, color);
 
-        // render table
-        generateTable(".principles-table", headings, data, radarChartOptions);
+      // render table
+      generateTable(".principles-table", headings, data, radarChartOptions);
 
-        // enable bootstrap popover
-        $(() => {
-          $('[data-toggle="popover"]').popover({ trigger: "hover", html: true });
-        });
-      })
-      .catch((err) => console.error);
-  </script>
+      // enable bootstrap popover
+      $(() => {
+        $('[data-toggle="popover"]').popover({ trigger: "hover", html: true });
+      });
+    })
+    .catch((err) => console.error);
+</script>

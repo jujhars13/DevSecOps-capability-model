@@ -14,21 +14,11 @@ function renderChartLegends(id, titles, width, height, colours) {
     .select(id)
     .selectAll("svg")
     .append("svg")
+    .attr("id", "radar-legend")
     .attr("width", width + 300)
     .attr("height", height);
 
-  //Create the title for the legend
-  const text = legendContainer
-    .append("text")
-    .attr("class", "title")
-    .attr("transform", "translate(90,0)")
-    .attr("x", width - 70)
-    .attr("y", 10)
-    .attr("font-size", "12px")
-    .attr("fill", "#404040")
-    .text("Legend");
-
-  //Initiate Legend
+  // Initiate Legend
   const legend = legendContainer
     .append("g")
     .attr("class", "legend")
@@ -36,7 +26,7 @@ function renderChartLegends(id, titles, width, height, colours) {
     .attr("width", 200)
     .attr("transform", "translate(90,20)");
 
-  //Create colour squares
+  // Create colour squares
   legend
     .selectAll("rect")
     .data(titles)
@@ -48,15 +38,15 @@ function renderChartLegends(id, titles, width, height, colours) {
     .attr("height", 10)
     .style("fill", (d, i) => colours(i));
 
-  //Create text next to squares
+  // Create text next to squares
   legend
     .selectAll("text")
     .data(titles)
     .enter()
     .append("text")
-    .attr("x", width - 52)
+    .attr("x", width - 50)
     .attr("y", (d, i) => i * 20 + 9)
-    .attr("font-size", "11px")
+    .attr("font-size", "18px")
     .attr("fill", "#737373")
     .attr("class", "capitalize")
     .text((d) => d);
