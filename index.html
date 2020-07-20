@@ -1,22 +1,20 @@
 ---
 layout: default
-title: DevSecOps Capability Model
+title: DevSecOps Capability Modelling
 ---
-<div class="jumbotron">
-  <div class="container">
-    <h1 class="display-4">{{ page.title }}</h1>
-    <p>Use this chart and data to rank and map your current progress on the DevSecOps journey and use it to drive improvement</p>
-  </div>
-</div>
-
 <!-- D3.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
+
+<div class="pt-4 px-4">
+  <h3>Capability Radar</h3>
+  <p class="lead">Rank your current progress on the DevSecOps journey and then drive improvement.</p>
+</div>
 
 <div class="radarChart text-center"><!-- radar component goes here --></div>
 
 <div class="pt-4 px-4">
   <h3>Principles Matrix</h3>
-  <p class="lead">More detail and justification for each of the the DevSecOps disciplines ranked above.</p>
+  <p class="lead">Deeper dive into each of the the DevSecOps disciplines ranked above.</p>
   <p>
     The minimum we want to achieve to have any sanity is <strong>level 3</strong> for almost all DecSecOps disciplines
     with <strong>level 4</strong> being our north star.
@@ -25,7 +23,7 @@ title: DevSecOps Capability Model
     Hover over each section in the table below to see a list of questions which you can use to self assess your
     maturity.
   </p>
-  <div class="principles-table table-responsive "><!-- table component goes here --></div>
+  <div class="principles-table table-responsive"><!-- table component goes here --></div>
 </div>
 
 <script src="js/radarChart.js"></script>
@@ -75,7 +73,7 @@ title: DevSecOps Capability Model
       });
 
       // render spider chart
-      RadarChart(".radarChart", scores, radarChartOptions);
+      // RadarChart(".radarChart", scores, radarChartOptions);
 
       // render spider chart legend
       renderChartLegends(".radarChart", teams, width, height, color);

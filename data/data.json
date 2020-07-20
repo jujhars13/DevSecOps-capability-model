@@ -140,22 +140,23 @@
         "questions": []
       },
       "level 2": {
-        "value": "Some scanning with poor remediation",
-        "description": "You have some Security",
+        "value": "Basic practices but weak implementation",
+        "description": "You have some security which is mostly reactionary",
         "questions": []
       },
       "level 3": {
-        "value": "Regular scanning and quick remediation",
-        "description": "You acceptable Security",
+        "value": "Manual scanning and remediation",
+        "description": "You have minimum security practices in place",
         "questions": [
           "Do your cloud accounts pass the CIS foundations benchmark v1.2",
           "Audit logs saved and tracked for at least 1 year"
         ]
       },
       "level 4": {
-        "value": "Max security and compliance w/ regular automated scanning and quick remediation",
-        "description": "You have maximum security",
+        "value": "Multi layered security and compliance w/ quick remediation",
+        "description": "You have extensive overlapping views of security related activity w/ regular automated scanning and well defined & observed remediation policy ",
         "questions": [
+          "You have a well defined and observed remediation policy covering different types of issues",
           "You have implemented a container security strategy",
           "You have a team that have undergone Incident response training",
           "Audit logs saved and tracked for at least 5 years if a (suspected) incident is found"

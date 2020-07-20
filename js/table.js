@@ -76,7 +76,7 @@ function generateTable(id, headings, data, options) {
     .attr("data-content", (d) => {
       // render description + questions data as popover text
       let questions = d.questions.reduce((acc, el) => {
-        acc += `<li>${el}></li>`;
+        acc += `<li>${el}</li>`;
         return acc;
       }, "");
       return `${d.description}<hr>${questions}`;
