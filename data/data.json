@@ -135,7 +135,7 @@
         "questions": ["How far left have you managed to shift security?"]
       },
       "level 1": {
-        "value": "Basic security practices",
+        "value": "Little to no security practices",
         "description": "You have little to no Security",
         "questions": []
       },
@@ -152,7 +152,10 @@
       "level 4": {
         "value": "Max security and compliance w/ regular automated scanning and quick remediation",
         "description": "You have maximum security",
-        "questions": ["You have implemented a container security strategy"]
+        "questions": [
+          "You have implemented a container security strategy",
+          "You have a team that specialised in Incident response training"
+        ]
       },
       "scores": {
         "team 1": 0.3,
@@ -171,8 +174,8 @@
         ]
       },
       "level 1": {
-        "value": "TODO",
-        "description": "You have little Availability ",
+        "value": "Little to no availability practices",
+        "description": "Little to no availability practices",
         "questions": ["Your MTTR (mean time to recovery) during an incident averages ~ 1d"]
       },
       "level 2": {
@@ -186,8 +189,8 @@
         "questions": ["Your MTTR (mean time to recovery) during an incident averages < 6hr"]
       },
       "level 4": {
-        "value": "TODO",
-        "description": "You have maximum Availability",
+        "value": "Fully adopted SRE",
+        "description": "You have fully adopted SRE practices across the board",
         "questions": ["Do you have a low and continuously improving MTTR? avg < 1hr"]
       },
       "scores": {
@@ -199,11 +202,11 @@
     {
       "principle": {
         "value": "Durability",
-        "description": "How quickly can we restore from backups",
+        "description": "How good are ours backups",
         "questions": []
       },
       "level 1": {
-        "value": "TODO",
+        "value": "Little to no handle on data durability",
         "description": "You have almost no Durability",
         "questions": []
       },

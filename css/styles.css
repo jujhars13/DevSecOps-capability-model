@@ -11,7 +11,7 @@ body {
   text-align: center;
 }
 
-.capitilise{
+.capitalize{
   text-transform: capitalize;
 }
 
@@ -23,15 +23,16 @@ body {
   fill: #333333;
 }
 
-th {
+#principles-table th {
   text-transform: capitalize;
+  cursor: pointer;
 }
 
-th.des:after {
+#principles-table th.des:after {
   content: "\21E9";
 }
 
-th.aes:after {
+#principles-table th.aes:after {
   content: "\21E7";
 }
 

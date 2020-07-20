@@ -58,6 +58,6 @@ function renderChartLegends(id, titles, width, height, colours) {
     .attr("y", (d, i) => i * 20 + 9)
     .attr("font-size", "11px")
     .attr("fill", "#737373")
-    .attr("class", "capitilise")
+    .attr("class", "capitalize")
     .text((d) => d);
 }

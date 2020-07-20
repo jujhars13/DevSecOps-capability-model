@@ -21,9 +21,10 @@ function generateTable(id, headings, data, options) {
     }
   }
 
-  const table = d3.select(id).append("table").attr("class", "table table-striped");
+  const table = d3.select(id).append("table").attr("id", "principles-table").attr("class", "table table-striped table-bordered ");
+  table.append("caption").text('DevSecOps Principles Matrix');
 
-  // table headers w/ popovers
+  // table headers w/ bootstrap popovers
   const headers = table
     .append("thead")
     .attr("class", "thead-dark")
@@ -35,6 +36,7 @@ function generateTable(id, headings, data, options) {
     .attr("data-content", (d) => d.description)
     .attr("data-toggle", "popover")
     .text((d) => d.title)
+    // sort headers
     .on("click", (d) => {
       headers.attr("class", "header");
       if (options.sortAscending) {
@@ -72,8 +74,9 @@ function generateTable(id, headings, data, options) {
     .attr("data-th", (d) => d.name)
     .attr("title", (d) => d.name)
     .attr("data-content", (d) => {
+      // render description + questions data as popover text
       let questions = d.questions.reduce((acc, el) => {
-        acc += `<li>${el}</li>`;
+        acc += `<li>${el}></li>`;
         return acc;
       }, "");
       return `${d.description}<hr>${questions}`;

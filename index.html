@@ -7,18 +7,25 @@ title: DevSecOps Capability Model
 
   <h2 class="center">{{ page.title }}</h2>
 
-  <div class="radarChart center"><!-- radar goes here --></div>
+  <div class="radarChart center"><!-- radar component goes here --></div>
 
-  <h3 >Principles Matrix</h3>
   <div>
-    <div class="principles-table"><!-- table view goes here --></div>
+  <h3>Principles Matrix</h3>
+  <p class="lead">More detail and justification for each of the the DevSecOps disciplines ranked above.</p>
+  <p>The minimum we want to achieve to have any sanity is <strong>level 3</strong> for almost all DecSecOps disciplines with <strong>level 4</strong> being our north star.</p>
+  <p>Hover over each section in the table below to see a list of questions which you can use
+  to self assess your maturity.</p>
+    <div class="principles-table table-responsive"><!-- table component goes here --></div>
   </div>
 
   <script src="js/radarChart.js"></script>
   <script src="js/radarLegend.js"></script>
   <script src="js/table.js"></script>
   <script>
-    // chart dimensions and options
+    /**
+     * render D3 charts and tables
+     */
+    // radar chart dimensions and options
     const margin = { top: 100, right: 100, bottom: 100, left: 100 };
     const width = Math.min(1024, window.innerWidth - 10) - margin.left - margin.right;
     const height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
@@ -65,7 +72,7 @@ title: DevSecOps Capability Model
         // render table
         generateTable(".principles-table", headings, data, radarChartOptions);
 
-        // enable bootstrap popovers in the table
+        // enable bootstrap popover
         $(() => {
           $('[data-toggle="popover"]').popover({ trigger: "hover", html: true });
         });
