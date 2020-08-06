@@ -245,19 +245,20 @@
         "questions": ["Your MTTR (mean time to recovery) during an incident averages ~ 1d"]
       },
       "level 2": {
-        "value": "TODO",
+        "value": "Basic practices",
         "description": "You have some Availability",
         "questions": ["Your MTTR (mean time to recovery) during an incident averages ~ 1d"]
       },
       "level 3": {
-        "value": "TODO",
+        "value": "Good practices and extensive measurement",
         "description": "You have good Availability",
         "questions": ["Your MTTR (mean time to recovery) during an incident averages < 6hr"]
       },
       "level 4": {
-        "value": "Fully adopted rugged SRE",
+        "value": "Fully adopted and rugged SRE",
         "description": "You have fully adopted SRE practices across the board",
         "questions": [
+          "You continuously monitor and improve on your numbers",
           "Do you have a low and continuously improving MTTR? avg < 1hr",
           "You follow the <a href='https://ruggedsoftware.org/'>rugged manifesto</a>"
         ]
