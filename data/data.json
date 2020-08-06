@@ -64,15 +64,69 @@
     },
     {
       "principle": {
-        "value": "CI/CD",
-        "description": "Enable fast flow from development to production and reliable releases",
+        "value": "Development Practices",
+        "description": "Good Dev Practices that enable you to move fast and reduce legacy",
         "questions": [
           "Standardise work",
-          "reduce variability and batch sizes",
-          "Continuous Improvement",
+          "Improve quality",
+          "Increase collaboration",
+          "Legacy systems are systems that are hard to manage - nothing to do with age"
+        ]
+      },
+      "level 1": {
+        "value": "Basic/Archaic dev practices",
+        "description": "You think confluence is good",
+        "questions": [
+          "You think git-flow is a good thing for high velocity projects",
+          "You need access to a full integrated environment to do any development and testing",
+          "It's difficult to deploy & release your software independently of the services that depend on it"
+        ]
+      },
+      "level 2": {
+        "value": "Starting to adopt modern dev practices",
+        "description": "You have some CI/CD with the occasional manual deployment steps",
+        "questions": ["You have long lived repo branches"]
+      },
+      "level 3": {
+        "value": "Well established practices",
+        "description": "You have good CI/CD best practices and a regular deployment cadence",
+        "questions": [
+          "Developers create and maintain their Acceptance tests",
+          "Tests are run at every commit of the code",
+          "You have a low number of active dev branches (<3)",
+          "You pair on a lot of tasks",
+          "You have fewer than 3 active and short lived branches at any time or work of Trunk Based Development"
+        ]
+      },
+      "level 4": {
+        "value": "Super optimised workflows and practices",
+        "description": "You follow all best practice CI/CD and deploy on a high frequency",
+        "questions": [
+          "Brittle integration tests are run in their own suite independent of stable tests",
+          "You mob on problems quite often",
+          "You have infosec tooling integrated into most stages of the SDLC",
+          "You can make large scale changes to your systems without creating significant work for other teams"
+        ]
+      },
+      "scores": {
+        "team 1": 0.7,
+        "team 2": 0.1,
+        "team n": 0.3
+      }
+    },
+    {
+      "principle": {
+        "value": "CI/CD",
+        "description": "Enable fast and quality flow from development to production reliably",
+        "questions": [
+          "Standardise work",
+          "Improve Quality",
+          "Lower Change fail rates",
+          "Reduce Defects and re-work",
+          "Reduce variability and batch sizes",
+          "Relentlessly pursue continuous improvement",
           "Continuous Integration",
-          "Continuous Delivery",
-          "Relentlessly pursue continuous improvement"
+          "Continuous Delivery"
         ]
       },
       "level 1": {
@@ -81,7 +135,8 @@
         "questions": [
           "Do you release multiple times an month?",
           "Your lead time for changes is between 1 week and 1 month",
-          "Your Change failure rate is between 31-45%"
+          "Your Change failure rate is between 31-45%",
+          "Your systems are hand crafted and you have extensive snowflake servers"
         ]
       },
       "level 2": {
@@ -97,13 +152,15 @@
         "value": "Comprehensive CI/CD with solid & stable test suite",
         "description": "You have good CI/CD best practices and a regular deployment cadence",
         "questions": [
+          "Your system and application config is kept in version control",
           "Do you release multiple times a day?",
           "Your lead time for changes is between 1 day and 1 week",
           "Your change failure rate is between 0-20%",
           "You can do blue/green deployments",
           "You use version control for all production artifacts",
           "Your deployment processes are 90% automated and any manual steps are well documented",
-          "Do you load test core components before major releases and revisions?"
+          "Do you load test core components before major releases and revisions?",
+          "You can make deployments during business hours with negligable downtime"
         ]
       },
       "level 4": {
@@ -112,7 +169,6 @@
         "questions": [
           "Do you continue to pursue continuous improvement and optimisations based on your telemetry",
           "Do you release multiple times an day? > 20 times ",
-          "Can you confidently deploy on a Friday?",
           "Your lead time for changes is between 1 hour and 1 day",
           "Your change failure rate is between 0-10%",
           "You regularly do canary deployments",
@@ -131,8 +187,11 @@
     {
       "principle": {
         "value": "Security",
-        "description": "How secure are our systems and do we have a good view of attack vectors",
-        "questions": ["How far left have you managed to shift security?"]
+        "description": "Building security into the SDLC improves delivery performance and security quality",
+        "questions": [
+          "How far left have you managed to shift security?",
+          "How secure are our systems and do we have a good view of attack vectors."
+        ]
       },
       "level 1": {
         "value": "Little to no security practices",
@@ -160,7 +219,8 @@
           "You have implemented a container security strategy",
           "You have a team that have undergone Incident response training",
           "Audit logs saved and tracked for at least 5 years if a (suspected) incident is found",
-          "You use trusted, evergreen base images with regular releases"
+          "You use trusted, evergreen base images with regular releases",
+          "Is everybody available "
         ]
       },
       "scores": {
@@ -195,9 +255,12 @@
         "questions": ["Your MTTR (mean time to recovery) during an incident averages < 6hr"]
       },
       "level 4": {
-        "value": "Fully adopted SRE",
+        "value": "Fully adopted rugged SRE",
         "description": "You have fully adopted SRE practices across the board",
-        "questions": ["Do you have a low and continuously improving MTTR? avg < 1hr"]
+        "questions": [
+          "Do you have a low and continuously improving MTTR? avg < 1hr",
+          "You follow the <a href='https://ruggedsoftware.org/'>rugged manifesto</a>"
+        ]
       },
       "scores": {
         "team 1": 0.7,
