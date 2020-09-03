@@ -32,7 +32,6 @@ Thanks to [Timo Pagel](https://github.com/wurstbrot) for the [DevSecOps maturity
 
 Props to [Nadieh Bremer](http://bl.ocks.org/nbremer/21746a9668ffdf6d8242) for the original Radar [d3.js](https://d3js.org/) radar code.
 
-
 ## Observability Strategy
 
 First published by Jujhar in March 2019
