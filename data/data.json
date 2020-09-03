@@ -272,28 +272,50 @@
     {
       "principle": {
         "value": "Durability",
-        "description": "How good are ours backups",
-        "questions": []
+        "description": "How good are our backups",
+        "questions": [
+          "Can you recover quickly from incidents a low MTTR?",
+          "Do you have faith in your backups and evidence to support that?",
+          "Can you guarantee low recovery point objectives?",
+          "Can you failover to backup systems?"
+        ]
       },
       "level 1": {
-        "value": "Little to no handle on data durability",
+        "value": "You pay lip service to backups",
         "description": "You have almost no Durability",
-        "questions": []
+        "questions": [
+          "You have at best a few sentences on your backup strategy tucked away in Confluence somewhere",
+          "You have never really tested your backups"
+        ]
       },
       "level 2": {
-        "value": "TODO",
-        "description": "You have low Durability",
-        "questions": []
+        "value": "You have a ad-hoc tested backup and restore strategy",
+        "description": "You have occasionally tested restoring your backups on an ad-hoc basis",
+        "questions": [
+          "You have done some manual restores and quick checks",
+          "Your backups strategy and patterns are documented reasonably well",
+          "You're generally aware of the things that aren't fully covered"
+        ]
       },
       "level 3": {
-        "value": "TODO",
-        "description": "You have acceptable Durability",
-        "questions": []
+        "value": "You have a regular tested backup and restore strategy",
+        "description": "You have good Durability and can sleep at night",
+        "questions": [
+          "You test backups and restores of components on a quarterly basis",
+          "You have thought about all the data/system corruption failpoints",
+          "You're fully aware of the things that aren't fully covered and have a strategy for them",
+          "You backup to different cloud accounts to reduce blast radius for gross errors"
+        ]
       },
       "level 4": {
-        "value": "TODO",
+        "value": "You can restore you entire system in under 2 hours",
         "description": "You have maximum Durability",
-        "questions": []
+        "questions": [
+          "You have high frequency backups",
+          "You run periodic game days where the entire infrastructure is destroyed",
+          "You run regular game days where the random parts of infrastructure are destroyed and recovered",
+          "You rehearse and strive as a team to bring the recovery time down, even changing your architecture to make it more robust"
+        ]
       },
       "scores": {
         "team 1": 0.4,
