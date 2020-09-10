@@ -3,6 +3,10 @@ layout: default
 title: About DevSecOps Capability Model
 ---
 
+## Why DevOps
+
+Since almost every company today relies on software, software delivery performance is a critical lever that a company has to improve organisational performance.
+
 ## How do you improve at DevOps?
 
 As you can see from the image below from the [Google State of DevOps report 2019](https://cloud.google.com/blog/products/devops-sre/the-2019-accelerate-state-of-devops-elite-performance-productivity-and-scaling) it is quite evident how much elite performers (Level 4) perform better than low performers (Level 1)

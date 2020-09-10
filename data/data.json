@@ -134,6 +134,7 @@
         "description": "You have a little CI/CD",
         "questions": [
           "Do you release multiple times an month?",
+          "Do you deploy at a decreasing frequency",
           "Your lead time for changes is between 1 week and 1 month",
           "Your Change failure rate is between 31-45%",
           "Your systems are hand crafted and you have extensive snowflake servers"
@@ -143,6 +144,7 @@
         "value": "Some CI/CD and some tests",
         "description": "You have some CI/CD with the occasional manual deployment steps",
         "questions": [
+          "Do you deploy at a constant frequency",
           "Do you release multiple times a week?",
           "Your lead time for changes is between 1 week and 1 month",
           "Your change failure rate is between 0-25%"
@@ -160,13 +162,14 @@
           "You use version control for all production artifacts",
           "Your deployment processes are 90% automated and any manual steps are well documented",
           "Do you load test core components before major releases and revisions?",
-          "You can make deployments during business hours with negligable downtime"
+          "You can make deployments during business hours with negligible downtime"
         ]
       },
       "level 4": {
         "value": "Max CI/CD, tests and scans",
         "description": "You follow all best practice CI/CD and deploy on a high frequency",
         "questions": [
+          "Do you deploy at an increasing frequency",
           "Do you continue to pursue continuous improvement and optimisations based on your telemetry",
           "Do you release multiple times an day? > 20 times ",
           "Your lead time for changes is between 1 hour and 1 day",
