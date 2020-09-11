@@ -58,7 +58,7 @@
       },
       "scores": {
         "team 1": 0.65,
-        "team 2": 0.1,
+        "team 2": 0.11,
         "team n": 0.3
       }
     },
@@ -199,26 +199,39 @@
       "level 1": {
         "value": "Little to no security practices",
         "description": "You have little to no Security",
-        "questions": []
+        "questions": [
+          "You have no security tooling enabled",
+          "Patch management is patchy at best",
+          "You store secrets in your code"
+        ]
       },
       "level 2": {
         "value": "Basic practices but weak implementation",
         "description": "You have some security which is mostly reactionary",
-        "questions": []
+        "questions": [
+          "You have AWS Security suite enabled but nobody is actively pursuing vulns",
+          "You have some view on vulnerabilities in your libraries",
+          "You have some view on vulnerabilities in your operating system",
+          "You use some secrets management",
+          "You engage in some active patch management/platform updates"
+        ]
       },
       "level 3": {
         "value": "Manual scanning and remediation",
         "description": "You have minimum security practices in place",
         "questions": [
           "Do your cloud accounts pass the CIS foundations benchmark v1.2",
-          "Audit logs saved and tracked for at least 1 year"
+          "Audit logs saved and tracked for at least 1 year",
+          "You have some threat modelling"
         ]
       },
       "level 4": {
         "value": "Multi layered security and compliance w/ quick remediation",
         "description": "You have extensive overlapping views of security related activity w/ regular automated scanning and well defined & observed remediation policy ",
         "questions": [
+          "You have comprehensive threat modelling",
           "You have a well defined and observed remediation policy covering different types of issues",
+          "You have configuration management and alerting",
           "You have implemented a container security strategy",
           "You have a team that have undergone Incident response training",
           "Audit logs saved and tracked for at least 5 years if a (suspected) incident is found",
@@ -287,7 +300,7 @@
         "value": "You pay lip service to backups",
         "description": "You have almost no Durability",
         "questions": [
-          "You have at best a few sentences on your backup strategy tucked away in Confluence somewhere",
+          "You have a few paragraphs on your backup strategy tucked away in Confluence somewhere",
           "You have never really tested your backups"
         ]
       },
