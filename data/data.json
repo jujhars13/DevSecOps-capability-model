@@ -10,12 +10,12 @@
     {
       "principle": {
         "value": "Observability",
-        "description": "How much observability do you have on your systems environments, inputs, outputs and behaviour. Do you have enough information on how your system runs to make improvements/solve problems",
+        "description": "How much observability do you have on your systems environments, inputs, outputs and behaviour. Do you have enough information on how your system runs to make improvements/solve problems?",
         "questions": []
       },
       "level 1": {
         "value": "Out of the box - only",
-        "description": "Just the basics you get from free from Cloudwatch, htop, task manager etc.",
+        "description": "Just the basics you get from free from Cloudwatch, an on-server agent, htop, task manager etc.",
         "questions": [
           "Do you have to have to add lots of debug statements when there's a prod issue?",
           "Do prod issues often catch you off guard?",
@@ -28,9 +28,10 @@
         "value": "Basic instrumentation of portions of your stack",
         "description": "You should have some logging at least",
         "questions": [
-          "Do you at least have APM turned on",
-          "Are your application logs going into a log aggregation platform",
-          "Do you have a historical view on application performance"
+          "Do you at least have APM turned on?",
+          "Are your application logs going into a log aggregation platform?",
+          "Do you have a historical view on application performance?",
+          "Do you run synthetic tests to find out issues before your customers do?"
         ]
       },
       "level 3": {
@@ -133,21 +134,22 @@
         "value": "Basic CI/CD w/ lots of manual steps",
         "description": "You have a little CI/CD",
         "questions": [
-          "Do you release multiple times an month?",
-          "Do you deploy at a decreasing frequency",
-          "Your lead time for changes is between 1 week and 1 month",
-          "Your Change failure rate is between 31-45%",
-          "Your systems are hand crafted and you have extensive snowflake servers"
+          "Do you release multiple times in a month?",
+          "Do you deploy at a decreasing frequency?",
+          "Is your lead time for changes over 1 month?",
+          "Is your change failure rate between 31-45%?",
+          "Are your systems hand crafted and you have extensive snowflake servers?",
+          "Are your deployment non-atomic, in a way that can leave environments in broken states following an in-CD failure?"
         ]
       },
       "level 2": {
         "value": "Some CI/CD and some tests",
         "description": "You have some CI/CD with the occasional manual deployment steps",
         "questions": [
-          "Do you deploy at a constant frequency",
+          "Do you deploy at a constant frequency?",
           "Do you release multiple times a week?",
-          "Your lead time for changes is between 1 week and 1 month",
-          "Your change failure rate is between 0-25%"
+          "Is your lead time for changes between 1 week and 1 month?",
+          "Is your change failure rate between 0-25%?"
         ]
       },
       "level 3": {
@@ -155,7 +157,7 @@
         "description": "You have good CI/CD best practices and a regular deployment cadence",
         "questions": [
           "Your system and application config is kept in version control",
-          "Do you release multiple times a day?",
+          "Could you release multiple times a day?",
           "Your lead time for changes is between 1 day and 1 week",
           "Your change failure rate is between 0-20%",
           "You can do blue/green deployments",
@@ -202,7 +204,9 @@
         "questions": [
           "You have no security tooling enabled",
           "Patch management is patchy at best",
-          "You store secrets in your code"
+          "You store secrets in your code",
+          "Do your customers, the media or developers tend to report security issues, as no automation is in place?",
+          "Is security an after thought, and only gets development efforts after incidents?"
         ]
       },
       "level 2": {
