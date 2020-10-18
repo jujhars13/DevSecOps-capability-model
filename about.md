@@ -5,19 +5,18 @@ title: About DevSecOps Capability Model
 
 ## Why Dev(Sec)Ops
 
-Since almost every company today relies on software, software delivery performance is a critical lever that a company has to improve organisational performance.  DevOps is a discipline and mindset that will improve your software delivery performance.  Functional excellence in this discipline is correlated strongly with software delivery performance.
-
-## How do you improve at Dev(Sec)Ops?
+Since almost every company today relies on software, software delivery performance is a critical lever that a company has to improve organisational performance.  DevOps is a discipline and mindset that will improve your software delivery performance.  Functional excellence in this discipline correlates strongly with high software delivery performance.
 
 As you can see from the image below from the [Google State of DevOps report 2019](https://cloud.google.com/blog/products/devops-sre/the-2019-accelerate-state-of-devops-elite-performance-productivity-and-scaling) it is quite evident how much elite performers (Level 4) perform better than low performers (Level 1)
 ![elite performers](img/elite-performers.png)
 
-Use this capability model to map where you are on the DevSecOps journey and then drive and monitor change in maturity.
+## How do you improve at Dev(Sec)Ops?
 
-### How to use
+Use this capability model to map where you are currently on the DevSecOps journey.  Start out by assessing your teams and then use the model drive and monitor change in maturity for team.  This tools will help you make more tactical investment choices based on the functional excellence you require for your product as well as identify issues in your teams.
 
-Look at the principles matrix and read the questions, based on your answers to the questions and score yourself for that principle.
+Look at the principles matrix and read the questions, based on your answers to the questions and score yourself/your team for that principle.
 Simply fork the project and modify the `data/data.json` and change the team names and scores to model your organisation. Or even add your own principles to model your organisations capability needs.
+At the moment the system will handle up to 12 team's scores (before we run out of colours.)
 
 ## Thanks
 
