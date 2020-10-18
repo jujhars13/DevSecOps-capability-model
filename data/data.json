@@ -14,7 +14,7 @@
       "principle": {
         "value": "Observability",
         "description": "How much observability do you have on your systems environments, inputs, outputs and behaviour. Do you have enough information on how your system runs to make improvements/solve problems?",
-        "questions": []
+        "questions": ["How well does your current approach map to the <a href='observability-strategy'>Observability Strategy</a>"]
       },
       "level 1": {
         "value": "Out of the box - only",
