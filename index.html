@@ -7,7 +7,7 @@ title: DevSecOps Capability Modelling
 
 <div class="pt-4 px-4">
   <h3>Capability Radar</h3>
-  <p class="lead">Rank your current progress on the DevSecOps journey and then drive improvement.</p>
+  <p class="lead">Rank your current progress on the DevSecOps journey and then drive improvement from there.</p>
 </div>
 
 <div class="radarChart text-center"><!-- radar component goes here --></div>
@@ -74,14 +74,13 @@ title: DevSecOps Capability Modelling
 
       // render spider chart
       RadarChart(".radarChart", scores, radarChartOptions);
-
       // render spider chart legend
       renderChartLegends(".radarChart", teams, width, height, color);
 
       // render table
       generateTable(".principles-table", headings, data, radarChartOptions);
 
-      // enable bootstrap popover
+      // enable bootstrap popover(hover) component
       $(() => {
         $('[data-toggle="popover"]').popover({ trigger: "hover", html: true });
       });

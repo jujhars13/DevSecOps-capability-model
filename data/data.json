@@ -107,7 +107,7 @@
           "You use 'immutable' Architectural Decision records for system level decisions",
           "You use linting tools with agreed and communicated coding standards, integrated into your CI/CD",
           "You use semantic versioning for your code, libraries and deployable artifacts",
-          "You stick to the 12 factor app manifesto as much as possible",
+          "You stick to the <a href='https://12factor.net/'>12 factor app manifesto</a> as much as possible",
           "You use RFC's to discuss and communicate wide reaching engineering decisions"
         ]
       },
