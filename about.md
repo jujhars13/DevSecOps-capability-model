@@ -29,7 +29,6 @@ This capability model was derived, influenced and inspired by:
 - [Making Matrixed Organizations Successful with DevOps](https://itrevolution.com/forum-paper-downloads/)
 - [Modernizing IT Operations in the Age of DevOps](https://itrevolution.com/forum-paper-downloads/)
 - [DevOps Automated Governance Reference Architecture ](https://itrevolution.com/forum-paper-downloads/)
-- [Steve Yegge's Platform Rant 2011](https://gist.github.com/jezhumble/a8b3cbb4ea20139582fa8ffc9d791fb2)
 
 Thanks to [Timo Pagel](https://github.com/wurstbrot) for the [DevSecOps maturity project](https://dsomm.timo-pagel.de/index.php) which was the original stimulus for this project.
 
