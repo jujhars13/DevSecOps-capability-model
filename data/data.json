@@ -1,6 +1,9 @@
 {
   "headings": [
-    { "title": "principle", "description": "" },
+    {
+      "title": "principle",
+      "description": "The DevSecOps Principle you need to be good at to better move the needle for your org"
+    },
     { "title": "level 1", "description": "Low adoption/attempts of basic best practices" },
     { "title": "level 2", "description": "Some minority adoption of basic best practices" },
     { "title": "level 3", "description": "Majority adoption of best practices" },
@@ -102,7 +105,7 @@
           "You pair on a lot of tasks",
           "You have fewer than 3 active and short lived branches at any time",
           "You use 'immutable' Architectural Decision records for system level decisions",
-          "You use linting tools, integrated into your CI/CD",
+          "You use linting tools with agreed and communicated coding standards, integrated into your CI/CD",
           "You use semantic versioning for your code, libraries and deployable artifacts",
           "You stick to the 12 factor app manifesto as much as possible",
           "You use RFC's to discuss and communicate wide reaching engineering decisions"
@@ -267,7 +270,6 @@
           "You have a mature bug bounty programme in place",
           "You have monitored honeypots spread about the place",
           "You have a threat intelligence team/consultancy advising you on your security focus based on the threat landscape"
-
         ]
       },
       "scores": {
