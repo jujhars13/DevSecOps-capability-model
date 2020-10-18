@@ -66,52 +66,64 @@
     {
       "principle": {
         "value": "Development Practices",
-        "description": "Good Dev Practices that enable you to move fast and reduce legacy",
+        "description": "Good engineering practices in the SDLC that enable you to move fast and reduce legacy",
         "questions": [
           "Standardise work",
           "Improve quality",
           "Increase collaboration",
-          "Legacy systems are systems that are hard to manage - nothing to do with age"
+          "Legacy systems are systems that are hard to manage (nothing to do with age, just quality of architecture, code and supporting artifacts)"
         ]
       },
       "level 1": {
         "value": "Basic/Archaic dev practices",
-        "description": "You think confluence is good",
+        "description": "",
         "questions": [
           "You think git-flow is a good thing for high velocity projects",
           "You need access to a full integrated environment to do any development and testing",
-          "It's difficult to deploy & release your software independently of the services that depend on it"
+          "It's difficult to deploy & release your software independently of the services that depend on it",
+          "The majority of your projects have blank README.md files"
         ]
       },
       "level 2": {
         "value": "Starting to adopt modern dev practices",
-        "description": "You have some CI/CD with the occasional manual deployment steps",
-        "questions": ["You have long lived repo branches"]
+        "description": "",
+        "questions": [
+          "You have long lived repo branches",
+          "You have documentation, but it is divorced from the code",
+          "Your documentation is done after the fact and is seen as separate task"
+        ]
       },
       "level 3": {
         "value": "Well established practices",
-        "description": "You have good CI/CD best practices and a regular deployment cadence",
+        "description": "",
         "questions": [
-          "Developers create and maintain their Acceptance tests",
-          "Tests are run at every commit of the code",
-          "You have a low number of active dev branches (<3)",
+          "Developers create and maintain their own acceptance tests",
+          "Your documentation is updated as part of the code",
           "You pair on a lot of tasks",
-          "You have fewer than 3 active and short lived branches at any time or work of Trunk Based Development"
+          "You have fewer than 3 active and short lived branches at any time",
+          "You use 'immutable' Architectural Decision records for system level decisions",
+          "You use linting tools, integrated into your CI/CD",
+          "You use semantic versioning for your code, libraries and deployable artifacts",
+          "You stick to the 12 factor app manifesto as much as possible",
+          "You use RFC's to discuss and communicate wide reaching engineering decisions"
         ]
       },
       "level 4": {
-        "value": "Super optimised workflows and practices",
-        "description": "You follow all best practice CI/CD and deploy on a high frequency",
+        "value": "Super optimised workflows, practices and cultures",
+        "description": "",
         "questions": [
+          "Your team's ways of working and preferences are documented and communicated",
           "Brittle integration tests are run in their own suite independent of stable tests",
-          "You mob on problems quite often",
-          "You have infosec tooling integrated into most stages of the SDLC",
-          "You can make large scale changes to your systems without creating significant work for other teams"
+          "You mob on problems quite often, increasing everybody's understanding",
+          "You use trunk based development most or all of the time",
+          "Your documentation is automatically generated as part of your CI/CD",
+          "You can make large scale changes to your systems without creating significant work for other teams",
+          "Your PR processes is very thorough and you can make/take suggestions without conflict"
         ]
       },
       "scores": {
-        "team 1": 0.7,
-        "team 2": 0.2,
+        "team 1": 0.6,
+        "team 2": 0.1,
         "team n": 0.3
       }
     },
@@ -206,18 +218,20 @@
           "Patch management is patchy at best",
           "You store secrets in your code",
           "Do your customers, the media or developers tend to report security issues, as no automation is in place?",
-          "Is security an after thought, and only gets development efforts after incidents?"
+          "Is security an afterthought, and only gets temporary engineering priority after embarrassing incidents?"
         ]
       },
       "level 2": {
         "value": "Basic practices but weak implementation",
         "description": "You have some security which is mostly reactionary",
         "questions": [
-          "You have AWS Security suite enabled but nobody is actively pursuing vulns",
+          "You have some security tooling enabled but nobody is actively pursuing vulns",
           "You have some view on vulnerabilities in your libraries",
           "You have some view on vulnerabilities in your operating system",
           "You use some secrets management",
-          "You engage in some active patch management/platform updates"
+          "You engage in some active patch management/platform updates",
+          "You have SSO or MFA over the majority of your software tools",
+          "You have some server endpoint protection"
         ]
       },
       "level 3": {
@@ -225,8 +239,17 @@
         "description": "You have minimum security practices in place",
         "questions": [
           "Do your cloud accounts pass the CIS foundations benchmark v1.2",
-          "Audit logs saved and tracked for at least 1 year",
-          "You have some threat modelling"
+          "Your platform and application logs saved and tracked for at least 1 year (or more depending on compliance reqs)",
+          "Your secrets are stored in a secrets management platform (AWS SSM, AWS secrets manager, Hashicorp Vault)",
+          "You have some threat modelling",
+          "You have active cloud configuration monitoring and alerting (AWS config)",
+          "You have active monitoring of your WAFS",
+          "You have 'supply chain' CI/CD and daily code scanning looking for vulns in your libs and runtimes",
+          "You have a SIEM solution in place with the majority of your infra, application and runtime logs being fed into there",
+          "You have a DAST solution as part of your CI/CD as well as regular scans",
+          "Your engineering teams have secure code training",
+          "All your cloud infra is well tagged and attributable",
+          "You have centralised server endpoint protection"
         ]
       },
       "level 4": {
@@ -237,16 +260,20 @@
           "You have a well defined and observed remediation policy covering different types of issues",
           "You have configuration management and alerting",
           "You have implemented a container security strategy",
-          "You have a team that have undergone Incident response training",
+          "You have a team that have undergone incident response training",
           "Audit logs saved and tracked for at least 5 years if a (suspected) incident is found",
           "You use trusted, evergreen base images with regular releases",
-          "Is everybody available "
+          "You have red team exercise attempting to break your software",
+          "You have a mature bug bounty programme in place",
+          "You have monitored honeypots spread about the place",
+          "You have a threat intelligence team/consultancy advising you on your security focus based on the threat landscape"
+
         ]
       },
       "scores": {
         "team 1": 0.3,
-        "team 2": 0.1,
-        "team n": 0.4
+        "team 2": 0.05,
+        "team n": 0.3
       }
     },
     {
@@ -262,22 +289,29 @@
       "level 1": {
         "value": "Little to no availability practices",
         "description": "Little to no availability practices",
-        "questions": ["Your MTTR (mean time to recovery) during an incident averages ~ 1d"]
+        "questions": ["Your MTTR (mean time to recovery) during an incident averages ~ 2d"]
       },
       "level 2": {
         "value": "Basic practices",
         "description": "You have some Availability",
-        "questions": ["Your MTTR (mean time to recovery) during an incident averages ~ 1d"]
+        "questions": [
+          "Your MTTR (mean time to recovery) during an incident averages ~ 1d",
+          "You have some sort of runbooks"
+        ]
       },
       "level 3": {
         "value": "Good practices and extensive measurement",
         "description": "You have good Availability",
-        "questions": ["Your MTTR (mean time to recovery) during an incident averages < 6hr"]
+        "questions": [
+          "Your MTTR (mean time to recovery) during an incident averages < 6hr",
+          "You're starting to follow the SRE approach and have started to documented your SLOs "
+        ]
       },
       "level 4": {
         "value": "Fully adopted and rugged SRE",
         "description": "You have fully adopted SRE practices across the board",
         "questions": [
+          "You follow the SRE approach and have well documented and customer negotiated SLOs and extensive SLIs feeding into them",
           "You continuously monitor and improve on your numbers",
           "Do you have a low and continuously improving MTTR? avg < 1hr",
           "You follow the <a href='https://ruggedsoftware.org/'>rugged manifesto</a>"
@@ -302,7 +336,7 @@
       },
       "level 1": {
         "value": "You pay lip service to backups",
-        "description": "You have almost no Durability",
+        "description": "You have almost no durability",
         "questions": [
           "You have a few paragraphs on your backup strategy tucked away in Confluence somewhere",
           "You have never really tested your backups"
@@ -314,15 +348,15 @@
         "questions": [
           "You have done some manual restores and quick checks",
           "Your backups strategy and patterns are documented reasonably well",
-          "You're generally aware of the things that aren't fully covered"
+          "You're aware of the big things that aren't fully covered"
         ]
       },
       "level 3": {
         "value": "You have a regular tested backup and restore strategy",
-        "description": "You have good Durability and can sleep at night",
+        "description": "You have good durability and can sleep at night",
         "questions": [
           "You test backups and restores of components on a quarterly basis",
-          "You have thought about all the data/system corruption failpoints",
+          "You have thought about all the data/system corruption failpoints consciously accept and communicate the risks",
           "You're fully aware of the things that aren't fully covered and have a strategy for them",
           "You backup to different cloud accounts to reduce blast radius for gross errors"
         ]
@@ -332,15 +366,16 @@
         "description": "You have maximum Durability",
         "questions": [
           "You have high frequency backups",
-          "You run periodic game days where the entire infrastructure is destroyed",
-          "You run regular game days where the random parts of infrastructure are destroyed and recovered",
-          "You rehearse and strive as a team to bring the recovery time down, even changing your architecture to make it more robust"
+          "You run >twice annual game days/chaos engineering where the entire infrastructure is destroyed",
+          "You run regular game days/chaos engineering where the random parts of infrastructure are destroyed and recovered",
+          "You rehearse and strive as a team to bring the recovery time down, even changing your architecture to make it more robust",
+          "You have backups in different cloud providers"
         ]
       },
       "scores": {
         "team 1": 0.4,
         "team 2": 0.1,
-        "team n": 0.6
+        "team n": 0.5
       }
     },
     {
