@@ -4,10 +4,10 @@
       "title": "principle",
       "description": "The DevSecOps Principle you need to be good at to better move the needle for your org"
     },
-    { "title": "level 1", "description": "Low adoption/attempts of basic best practices" },
+    { "title": "level 1", "description": "Poorly controlled, reactive" },
     { "title": "level 2", "description": "Some minority adoption of basic best practices" },
-    { "title": "level 3", "description": "Majority adoption of best practices" },
-    { "title": "level 4", "description": "Advanced implementation of principles across the board" }
+    { "title": "level 3", "description": "Proactive not reactive, measured and controlled" },
+    { "title": "level 4", "description": "Continuous improvement, pushing the envelope with advanced implementation of principles" }
   ],
   "principles": [
     {
@@ -18,7 +18,7 @@
       },
       "level 1": {
         "value": "Out of the box - only",
-        "description": "Just the basics you get from free from Cloudwatch, an on-server agent, htop, task manager etc.",
+        "description": "Just the basics you get for free from Cloudwatch, an on-server agent, htop, task manager etc.",
         "questions": [
           "Do you have to have to add lots of debug statements when there's a prod issue?",
           "Do prod issues often catch you off guard?",
