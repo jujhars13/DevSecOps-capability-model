@@ -172,6 +172,7 @@
         "description": "You have good CI/CD best practices and a regular deployment cadence",
         "questions": [
           "Your system and application config is kept in version control",
+          "Your deploy >13 times a week",
           "Could you release multiple times a day?",
           "Your lead time for changes is between 1 day and 1 week",
           "Your change failure rate is between 0-20%",
@@ -179,7 +180,8 @@
           "You use version control for all production artifacts",
           "Your deployment processes are 90% automated and any manual steps are well documented",
           "Do you load test core components before major releases and revisions?",
-          "You can make deployments during business hours with negligible downtime"
+          "You can make deployments during business hours with negligible downtime",
+          "The majority of your deployments deploy in under 15mins"
         ]
       },
       "level 4": {
