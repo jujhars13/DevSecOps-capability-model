@@ -5,7 +5,7 @@ title: About DevSecOps Capability Model
 
 ## Why Dev(Sec)Ops
 
-Since almost every company today relies on software, software delivery performance is a critical lever that a company has to improve organisational performance.  DevOps is a discipline and mindset that will improve your software delivery performance.  Functional excellence in this discipline correlates strongly with high software delivery performance.
+Software delivery performance is a critical lever that a company has to improve organisational performance.  DevSecOps is a philosophy and mindset that will improve your software delivery performance.  Functional excellence in this discipline correlates strongly with high software delivery performance.
 
 As you can see from the image below from the [Google State of DevOps report 2019](https://cloud.google.com/blog/products/devops-sre/the-2019-accelerate-state-of-devops-elite-performance-productivity-and-scaling) it is quite evident how much elite performers (Level 4) perform better than low performers (Level 1)
 ![elite performers](img/elite-performers.png)
@@ -28,7 +28,7 @@ This capability model was derived, influenced and inspired by:
   - [Google State of DevOps report 2019](https://cloud.google.com/blog/products/devops-sre/the-2019-accelerate-state-of-devops-elite-performance-productivity-and-scaling)
 - [Making Matrixed Organizations Successful with DevOps](https://itrevolution.com/forum-paper-downloads/)
 - [Modernizing IT Operations in the Age of DevOps](https://itrevolution.com/forum-paper-downloads/)
-- [DevOps Automated Governance Reference Architecture ](https://itrevolution.com/forum-paper-downloads/)
+- [DevOps Automated Governance Reference Architecture](https://itrevolution.com/forum-paper-downloads/)
 
 Thanks to [Timo Pagel](https://github.com/wurstbrot) for the [DevSecOps maturity project](https://dsomm.timo-pagel.de/index.php) which was the original stimulus for this project.
 

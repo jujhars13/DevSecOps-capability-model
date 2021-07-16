@@ -1,6 +1,6 @@
 # DevSecOps Capability Model
 
-A simplified capability model for those on DevSecOps transformation journey.
+A simplified capability model for those on a DevSecOps transformation journey.
 Fork and use this to map where you are as an organisation are use it to drive where you need to be.
 
 ![screnshot](img/screenshot.png)
@@ -14,10 +14,10 @@ Fork this radar and modify `data/tableData.json`.
 ## Inspired by
 
 Influenced and inspired by
+
 - [Unicorn Project](https://www.amazon.co.uk/dp/1942788762)
 - [Accelerate](https://www.amazon.co.uk/dp/1942788339)
-
-Thanks to [Timo Pagel](https://github.com/wurstbrot) for the initial [project](https://github.com/wurstbrot/DevSecOps-MaturityModel).
+- [Timo Pagel DevSecOps Maturity Model](https://github.com/wurstbrot/DevSecOps-MaturityModel)
 
 ## Local Development
 
@@ -36,9 +36,9 @@ docker run -it --rm \
 
 ## Build and deploy
 
-This site is a [Jekyll static site](https://jekyllrb.com/) and will be auto deployed via Github pages to [https://devsecops.jujhar.com]() upon commit to master.
+This site is a [Jekyll static site](https://jekyllrb.com/) and will be auto deployed via Github pages to [](https://devsecops.jujhar.com) upon commit to master.
 
-If you're not publishing to Github pages use this command to one time build assets into `_site` and then publish to a S3 static bucket or old school server.
+If you're not publishing to Github pages use this command to one time build assets into `_site` and then publish to a static site bucket or web server.
 
 ```bash
 # will build into the _site directory
