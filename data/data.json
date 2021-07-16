@@ -91,7 +91,7 @@
         "description": "",
         "questions": [
           "You have long lived repo branches",
-          "You have documentation, but it is divorced from the code",
+          "You have some documentation, but it is divorced from the code and it quickly drifts",
           "Your documentation is done after the fact and is seen as separate task"
         ]
       },
@@ -99,16 +99,17 @@
         "value": "Well established practices",
         "description": "",
         "questions": [
-          "Developers create and maintain their own acceptance tests",
-          "You measure and optimise the \"4 key metrics\"",
+          "You use <a href=\"https://www.thoughtworks.com/radar/techniques?blipid=202104044\">lightweight RFCs</a> to share system level changes and practices between teams",
+          "You use 'immutable' Architectural Decision Records for repo level decisions",
           "Your documentation is updated as part of the code",
           "You pair on a lot of tasks",
-          "You have fewer than 3 active and short lived branches at any time",
-          "You use 'immutable' Architectural Decision records for system level decisions",
+          "You measure some of the \"4 key metrics\"",
+          "Developers create and maintain their own acceptance tests",
+          "You have fewer than 3 active and short lived feature branches at any time",
           "You use linting tools with agreed and communicated coding standards, integrated into your CI/CD",
           "You use semantic versioning for your code, libraries and deployable artifacts",
           "You stick to the <a href='https://12factor.net/'>12 factor app manifesto</a> as much as possible",
-          "You use RFC's to discuss and communicate wide reaching engineering decisions"
+          "Brittle integration tests are run in their own suite independent of stable tests"
         ]
       },
       "level 4": {
@@ -116,8 +117,7 @@
         "description": "",
         "questions": [
           "Your team's ways of working and preferences are documented and communicated",
-          "You score highly in the \"4 key metrics\"",
-          "Brittle integration tests are run in their own suite independent of stable tests",
+          "You measure and optimise the \"4 key metrics\"",
           "You mob on problems quite often, increasing everybody's understanding",
           "You use trunk based development most or all of the time",
           "Your documentation is automatically generated as part of your CI/CD",
@@ -436,3 +436,4 @@
     }
   ]
 }
+
