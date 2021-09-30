@@ -5,11 +5,10 @@ Fork and use this to map where you are as an organisation are use it to drive wh
 
 ![screnshot](img/screenshot.png)
 
-All the raw data is in `data/tableData.json`
+Fork this radar and modify the raw data in `data/tableData.json`.
 
-Deployed using github-pages to [](https://devsecops.jujhar.com)
+Deployed using github-pages to [https://devsecops.jujhar.com](), you can publish yours using gh pages too.
 
-Fork this radar and modify `data/tableData.json`.
 
 ## Inspired by
 
