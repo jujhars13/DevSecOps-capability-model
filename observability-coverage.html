@@ -13,7 +13,7 @@ title: Observability coverage
 
     <div class="row">
       <h1>Observability Coverage</h1>
-      <small>v2.2020-07-12</small>
+      <small>v2.1-2021-10-30</small>
     </div>
     <div>
       <div>By following this coverage strategy we can increase the observability of each layer of our systems and make system easier to manager</div>
@@ -41,8 +41,8 @@ title: Observability coverage
             Is the cloud infrastructure healthy, performing and efficient
           </td>
           <td>
-            Application Performance Monitoring (APM).
-            Server-side code instrumentation for performance and errors
+            Application Performance Monitoring (APM) and Transaction Tracing.
+            Server-side code instrumentation for performance and errors.  Transaction tracing.
           </td>
           <td>
             APIs and Blackbox. Are our underlying APIs up, performing well (globally) and returning the right data?
@@ -77,6 +77,7 @@ title: Observability coverage
               <li>Errors</li>
               <li>Function invocation rate/frequency</li>
               <li>Lambda Invocations</li>
+              <li>Distribution Tracing</li>
             </ul>
           </td>
           <td>
@@ -134,6 +135,7 @@ title: Observability coverage
             <ul class="list-unstyled">
               <li data-toggle="tooltip" data-placement="right" title="APM" class="btn btn-warning">NewRelic</li>
               <li data-toggle="tooltip" data-placement="right" title="APM" class="btn btn-warning">DataDog</li>
+              <li data-toggle="tooltip" data-placement="right" title="Zipkin and Jaeger to trace transactions" class="btn btn-warning">Opentracing</li>
               <li data-toggle="tooltip" data-placement="right" title="Horizontal stack opentracing and custom instrumentation markers" class="btn btn-info">Logz.io</li>
               <li data-toggle="tooltip" data-placement="right" title="Horizontal stack opentracing" class="btn btn-info">AWS Xray</li>
               <li data-toggle="tooltip" data-placement="right" title="Lambda monitor" class="btn btn-warning">Dashbird</li>
