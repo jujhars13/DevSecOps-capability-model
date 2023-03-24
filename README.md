@@ -9,7 +9,6 @@ Fork this radar and modify the raw data in `data/tableData.json`.
 
 Deployed using github-pages to [https://devsecops.jujhar.com](), you can publish yours using gh pages too.
 
-
 ## Inspired by
 
 Influenced and inspired by
@@ -17,6 +16,7 @@ Influenced and inspired by
 - [Unicorn Project](https://www.amazon.co.uk/dp/1942788762)
 - [Accelerate](https://www.amazon.co.uk/dp/1942788339)
 - [Timo Pagel DevSecOps Maturity Model](https://github.com/wurstbrot/DevSecOps-MaturityModel)
+- [Maturity models - Fowler](https://martinfowler.com/bliki/MaturityModel.html)
 
 ## Local Development
 
@@ -25,7 +25,7 @@ Influenced and inspired by
 docker run -it --rm \
   -v ${PWD}:/srv/jekyll \
   -p 4000:4000 \
-  jekyll/jekyll \
+  jekyll/minimal:3.8 \
   jekyll serve --watch
 
 # OPTIONAL use the awesome `reload` which auto-refreshes your browser on change using websockets
