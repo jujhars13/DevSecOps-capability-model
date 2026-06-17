@@ -110,8 +110,7 @@ title: Security controls across the SDLC
 </header>
 
 <div class="error" id="error">
-  Couldn’t load <code>sdlc-security-controls.json</code>. Browsers block <code>fetch()</code> over <code>file://</code> —
-  serve the folder over HTTP, e.g. <code>python3 -m http.server</code>, then open this page from the local server.
+  Couldn’t load <code>sdlc-security-controls.json</code>
 </div>
 
 <div class="scroll">
@@ -174,7 +173,7 @@ title: Security controls across the SDLC
     }).join("");
   }
 
-  fetch("data/sdlc-security-controls.json")
+  fetch("../data/sdlc-security-controls.json")
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(render)
     .catch(() => {
