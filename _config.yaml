@@ -1,7 +1,7 @@
 highlighter: rouge
 markdown: kramdown
 author: Jujhar Singh
-url: https://devsecopscm.jujhar.com
+url: https://devsikhops.com/
 permalink: pretty
 exclude: ['README.md','_config.yaml','.gitignore','/.git','.history']
 timezone: Europe/London
@@ -15,4 +15,3 @@ compress_html:
     envs: [production]
 
 custom_variable: "custom value"
-analytics-id: "UA-173027048-1"
