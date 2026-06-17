@@ -1,5 +1,5 @@
 {
-  "title": "Goodstack — Security controls across the SDLC",
+  "title": "Security controls across the SDLC",
   "subtitle": "As few vulnerabilities reach production as possible. Controls flow left&nbsp;→&nbsp;right from cheap, early prevention toward runtime detection &amp; response. Cards are colour-coded by risk-reduction impact.",
   "stages": [
     { "key": "Design",          "label": "Stage 1", "name": "Design",          "desc": "Before any code exists",          "theme": "s1" },
