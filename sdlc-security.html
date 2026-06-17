@@ -1,0 +1,184 @@
+---
+layout: minimal
+title: Security controls across the SDLC
+---
+
+<style>
+  :root {
+    --bg: #0f1419;
+    --panel: #1a212b;
+    --ink: #e6edf3;
+    --muted: #8b98a9;
+    --line: #2b3543;
+    --high: #f0506e;
+    --high-bg: rgba(240, 80, 110, 0.12);
+    --med: #ffb454;
+    --med-bg: rgba(255, 180, 84, 0.12);
+    --low: #59c2ff;
+    --low-bg: rgba(89, 194, 255, 0.12);
+    --new: #2ee6a6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 40px 28px 64px;
+    background: radial-gradient(1200px 600px at 20% -10%, #16202c 0%, var(--bg) 60%);
+    color: var(--ink);
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  header.page { max-width: 1500px; margin: 0 auto 28px; }
+  h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); max-width: 760px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 18px; margin: 18px 0 0; align-items: center; }
+  .legend .item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+  .dot { width: 12px; height: 12px; border-radius: 3px; }
+  .dot.high { background: var(--high); }
+  .dot.med { background: var(--med); }
+  .dot.low { background: var(--low); }
+  .pill-new {
+    background: var(--new); color: #06241a; font-weight: 700;
+    font-size: 10px; letter-spacing: 0.04em; padding: 2px 7px; border-radius: 999px;
+  }
+
+  .scroll { max-width: 1500px; margin: 0 auto; overflow-x: auto; }
+  table { border-collapse: separate; border-spacing: 14px 0; width: 100%; table-layout: fixed; }
+  thead th { vertical-align: top; padding: 0 0 14px; min-width: 210px; }
+  .stage {
+    position: relative; border-radius: 12px 12px 0 0; padding: 14px 16px;
+    background: linear-gradient(135deg, var(--c1), var(--c2)); color: #fff;
+  }
+  .stage .n { font-size: 11px; opacity: 0.85; letter-spacing: 0.08em; text-transform: uppercase; }
+  .stage .name { font-size: 17px; font-weight: 700; margin-top: 2px; }
+  .stage .desc { font-size: 12px; opacity: 0.9; margin-top: 4px; font-weight: 400; }
+  .stage::after {
+    content: "›"; position: absolute; right: -16px; top: 50%; transform: translateY(-50%);
+    color: var(--line); font-size: 26px; font-weight: 700; z-index: 2;
+  }
+  thead th:last-child .stage::after { content: ""; }
+
+  .s1 { --c1:#3b4d8f; --c2:#5566b3; }
+  .s2 { --c1:#3f6aa8; --c2:#4f8fd0; }
+  .s3 { --c1:#2f8f7f; --c2:#37b39a; }
+  .s4 { --c1:#b08a2e; --c2:#d4a93a; }
+  .s5 { --c1:#a85a3f; --c2:#d0744f; }
+  .s6 { --c1:#8e3f6a; --c2:#b3508a; }
+
+  tbody td { vertical-align: top; padding: 0; }
+  .col { display: flex; flex-direction: column; gap: 12px; }
+
+  .card {
+    background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--accent);
+    border-radius: 10px; padding: 12px 13px; position: relative;
+    transition: transform .12s ease, border-color .12s ease;
+  }
+  .card:hover { transform: translateY(-2px); border-color: var(--accent); }
+  .card .top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .card .type { font-weight: 700; font-size: 13px; }
+  .card .body { font-size: 12.5px; color: #cdd7e2; }
+  .card .impact {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+    padding: 2px 8px; border-radius: 999px; white-space: nowrap;
+  }
+  .card.high { --accent: var(--high); }
+  .card.high .impact { background: var(--high-bg); color: var(--high); }
+  .card.med  { --accent: var(--med); }
+  .card.med .impact { background: var(--med-bg); color: var(--med); }
+  .card.low  { --accent: var(--low); }
+  .card.low .impact { background: var(--low-bg); color: var(--low); }
+  .card .new {
+    display: inline-block; margin-top: 7px; background: var(--new); color: #06241a;
+    font-weight: 700; font-size: 9.5px; letter-spacing: 0.05em; padding: 1px 6px; border-radius: 999px;
+  }
+  .note { font-style: italic; color: var(--muted); font-size: 11.5px; margin-top: 6px; }
+  footer { max-width: 1500px; margin: 28px auto 0; color: var(--muted); font-size: 12.5px; }
+  .error {
+    display: none; max-width: 1500px; margin: 0 auto; padding: 18px 20px;
+    background: var(--high-bg); border: 1px solid var(--high); border-radius: 10px; color: var(--ink);
+  }
+  .error code { background: #000; padding: 1px 6px; border-radius: 4px; }
+</style>
+
+<header class="page">
+  <h1 id="title">Loading…</h1>
+  <div class="sub" id="subtitle"></div>
+  <div class="legend">
+    <span class="item"><span class="dot high"></span> High impact</span>
+    <span class="item"><span class="dot med"></span> Medium impact</span>
+    <span class="item"><span class="dot low"></span> Low impact</span>
+    <span class="item"><span class="pill-new">NEW</span> Added in this revision</span>
+  </div>
+</header>
+
+<div class="error" id="error">
+  Couldn’t load <code>sdlc-security-controls.json</code>. Browsers block <code>fetch()</code> over <code>file://</code> —
+  serve the folder over HTTP, e.g. <code>python3 -m http.server</code>, then open this page from the local server.
+</div>
+
+<div class="scroll">
+  <table>
+    <thead><tr id="head"></tr></thead>
+    <tbody><tr id="body"></tr></tbody>
+  </table>
+</div>
+
+<footer>
+  Cards within each stage are ordered by impact (High → Low). The <strong>Impact</strong> rating is risk-reduction value, not implementation effort.
+  Note the dependency: the High-impact <em>SBOM Scan</em> (Post-production) is only as good as its Low-rated enabler, <em>SBOM</em> generation (CI) — track them as a pair.
+</footer>
+
+<script>
+  const IMPACT = {
+    High:   { cls: "high", order: 0 },
+    Medium: { cls: "med",  order: 1 },
+    Low:    { cls: "low",  order: 2 }
+  };
+
+  const esc = s => String(s).replace(/[&<>"]/g, c => (
+    { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]
+  ));
+
+  function cardHtml(c) {
+    const cls = (IMPACT[c.impact] || IMPACT.Medium).cls;
+    return `<div class="card ${cls}">
+      <div class="top">
+        <span class="type">${esc(c.type)}</span>
+        <span class="impact">${esc(c.impact)}</span>
+      </div>
+      <div class="body">${esc(c.desc)}</div>
+      ${c.note ? `<div class="note">${esc(c.note)}</div>` : ""}
+      ${c.new ? `<span class="new">NEW</span>` : ""}
+    </div>`;
+  }
+
+  function render(data) {
+    document.getElementById("title").textContent = data.title;
+    document.getElementById("subtitle").innerHTML = data.subtitle;
+
+    const colWidth = (100 / data.stages.length).toFixed(2) + "%";
+
+    document.getElementById("head").innerHTML = data.stages.map(st => `
+      <th style="width:${colWidth}">
+        <div class="stage ${esc(st.theme)}">
+          <div class="n">${esc(st.label)}</div>
+          <div class="name">${esc(st.name)}</div>
+          <div class="desc">${esc(st.desc)}</div>
+        </div>
+      </th>`).join("");
+
+    document.getElementById("body").innerHTML = data.stages.map(st => {
+      const cards = data.controls
+        .filter(c => c.stage === st.key)
+        .sort((a, b) => (IMPACT[a.impact] || {}).order - (IMPACT[b.impact] || {}).order)
+        .map(cardHtml).join("");
+      return `<td><div class="col">${cards}</div></td>`;
+    }).join("");
+  }
+
+  fetch("data/sdlc-security-controls.json")
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(render)
+    .catch(() => {
+      document.getElementById("title").textContent = "Security controls across the SDLC";
+      document.getElementById("error").style.display = "block";
+    });
+</script>
