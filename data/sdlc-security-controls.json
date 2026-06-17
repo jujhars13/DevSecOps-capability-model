@@ -1,41 +1,211 @@
 {
-  "title": "Security controls across the SDLC",
-  "subtitle": "As few vulnerabilities reach production as possible. Controls flow left&nbsp;→&nbsp;right from cheap, early prevention toward runtime detection &amp; response. Cards are colour-coded by risk-reduction impact.",
-  "stages": [
-    { "key": "Design",          "label": "Stage 1", "name": "Design",          "desc": "Before any code exists",          "theme": "s1" },
-    { "key": "Laptop",          "label": "Stage 2", "name": "Engineer Laptop",  "desc": "Pre-commit / local",              "theme": "s2" },
-    { "key": "CI",              "label": "Stage 3", "name": "CI · GitHub",      "desc": "Build & gate",                    "theme": "s3" },
-    { "key": "Pre-production",  "label": "Stage 4", "name": "Pre-production",   "desc": "Built artifact, not yet live",    "theme": "s4" },
-    { "key": "Production",      "label": "Stage 5", "name": "Production",       "desc": "Serving traffic",                 "theme": "s5" },
-    { "key": "Post-production", "label": "Stage 6", "name": "Post-production",  "desc": "Ongoing · detect & respond",      "theme": "s6" }
-  ],
-  "controls": [
-    { "type": "Threat modelling",     "stage": "Design",          "impact": "High",   "new": true,  "desc": "Threat model new features / design reviews so we design vulns out before code exists." },
+	"title": "Security controls across the SDLC",
+	"subtitle": "As few vulnerabilities reach production as possible. Controls flow left&nbsp;→&nbsp;right from cheap, early prevention toward runtime detection &amp; response. Cards are colour-coded by risk-reduction impact.",
+	"stages": [
+		{
+			"key": "Design",
+			"label": "Stage 1",
+			"name": "Design",
+			"desc": "Before any code exists",
+			"theme": "s1"
+		},
+		{
+			"key": "Laptop",
+			"label": "Stage 2",
+			"name": "Engineer Laptop",
+			"desc": "Pre-commit / local",
+			"theme": "s2"
+		},
+		{
+			"key": "CI",
+			"label": "Stage 3",
+			"name": "CI · GitHub",
+			"desc": "Build & gate",
+			"theme": "s3"
+		},
+		{
+			"key": "Pre-production",
+			"label": "Stage 4",
+			"name": "Pre-production",
+			"desc": "Built artifact, not yet live",
+			"theme": "s4"
+		},
+		{
+			"key": "Production",
+			"label": "Stage 5",
+			"name": "Production",
+			"desc": "Serving traffic",
+			"theme": "s5"
+		},
+		{
+			"key": "Post-production",
+			"label": "Stage 6",
+			"name": "Post-production",
+			"desc": "Ongoing · detect & respond",
+			"theme": "s6"
+		}
+	],
+	"controls": [
+		{
+			"type": "Threat modelling",
+			"stage": "Design",
+			"impact": "High",
+			"new": true,
+			"desc": "Threat model new features / design reviews so we design vulns out before code exists."
+		},
 
-    { "type": "Secrets",              "stage": "Laptop",          "impact": "High",   "new": false, "desc": "Secrets scanning at pre-commit and in CI." },
-    { "type": "Dependencies",         "stage": "Laptop",          "impact": "Medium", "new": false, "desc": "npm audit for high/critical supply chain vulns." },
-    { "type": "Developer signing",    "stage": "Laptop",          "impact": "Low",    "new": true,  "desc": "PGP-sign commits to ensure they came from a trusted laptop, else fail." },
+		{
+			"type": "Secrets",
+			"stage": "Laptop",
+			"impact": "High",
+			"new": false,
+			"desc": "Secrets scanning at pre-commit and in CI."
+		},
+		{
+			"type": "Dependencies",
+			"stage": "Laptop",
+			"impact": "Medium",
+			"new": false,
+			"desc": "npm audit for high/critical supply chain vulns."
+		},
+		{
+			"type": "Developer signing",
+			"stage": "Laptop",
+			"impact": "Low",
+			"new": true,
+			"desc": "PGP-sign commits to ensure they came from a trusted laptop, else fail."
+		},
 
-    { "type": "Secrets",              "stage": "CI",              "impact": "High",   "new": true,  "desc": "Secrets scanning at pre-commit and in CI." },
-    { "type": "Dependencies",         "stage": "CI",              "impact": "High",   "new": false, "desc": "npm audit for high/critical supply chain vulns." },
-    { "type": "Dependencies",         "stage": "CI",              "impact": "Medium", "new": false, "desc": "Dependabot scanning for supply chain vulns (medium frequency, 2×/day)." },
-    { "type": "SAST",                 "stage": "CI",              "impact": "Medium", "new": false, "desc": "SAST scanning — parses code into an AST then checks for theoretical vulns." },
-    { "type": "IaC scanning",         "stage": "CI",              "impact": "High",   "new": true,  "desc": "tfsec / checkov / Trivy-config gate on Terraform." },
-    { "type": "SBOM",                 "stage": "CI",              "impact": "Low",    "new": true,  "desc": "Generate and publish SBOM so that we can check for vulns post-production." },
-    { "type": "Code signing",         "stage": "CI",              "impact": "Medium", "new": true,  "desc": "Code signing in CI, then verify the signature in production to ensure what we built is what runs." },
+		{
+			"type": "Secrets",
+			"stage": "CI",
+			"impact": "High",
+			"new": true,
+			"desc": "Secrets scanning at pre-commit and in CI."
+		},
+		{
+			"type": "Dependencies",
+			"stage": "CI",
+			"impact": "High",
+			"new": false,
+			"desc": "npm audit for high/critical supply chain vulns."
+		},
+		{
+			"type": "Dependencies",
+			"stage": "CI",
+			"impact": "Medium",
+			"new": false,
+			"desc": "Dependabot scanning for supply chain vulns (medium frequency, 2×/day)."
+		},
+		{
+			"type": "SAST",
+			"stage": "CI",
+			"impact": "Medium",
+			"new": false,
+			"desc": "SAST scanning — parses code into an AST then checks for theoretical vulns."
+		},
+		{
+			"type": "IaC scanning",
+			"stage": "CI",
+			"impact": "High",
+			"new": true,
+			"desc": "tfsec / checkov / Trivy-config gate on Terraform."
+		},
+		{
+			"type": "SBOM",
+			"stage": "CI",
+			"impact": "Low",
+			"new": true,
+			"desc": "Generate and publish SBOM so that we can check for vulns post-production."
+		},
+		{
+			"type": "Code signing",
+			"stage": "CI",
+			"impact": "Medium",
+			"new": true,
+			"desc": "Code signing in CI, then verify the signature in production to ensure what we built is what runs."
+		},
 
-    { "type": "Container scanning",   "stage": "Pre-production",  "impact": "Medium", "new": false, "desc": "Daily ECR container scanning to look for vulnerable packages.", "note": "Non-blocking — must have SLO-miss policy." },
-    { "type": "DAST",                 "stage": "Pre-production",  "impact": "Medium", "new": true,  "desc": "DAST scanning of API and frontend for obvious vulns.", "note": "Non-blocking — must have SLO-miss policy." },
+		{
+			"type": "Container scanning",
+			"stage": "Pre-production",
+			"impact": "Medium",
+			"new": false,
+			"desc": "Daily ECR container scanning to look for vulnerable packages.",
+			"note": "Non-blocking — must have SLO-miss policy."
+		},
+		{
+			"type": "DAST",
+			"stage": "Pre-production",
+			"impact": "Medium",
+			"new": true,
+			"desc": "DAST scanning of API and frontend for obvious vulns.",
+			"note": "Non-blocking — must have SLO-miss policy."
+		},
 
-    { "type": "Edge protection (WAF)","stage": "Production",      "impact": "High",   "new": true,  "desc": "AWS WAF on CloudFront/ALB — managed rule groups (Core, Known-Bad-Inputs, SQLi, IP-reputation, Anonymous-IP) + rate-based rule." },
-    { "type": "Code signing",         "stage": "Production",      "impact": "Medium", "new": true,  "desc": "Verify the CI signature with a pre-start hook to ensure what we built is what runs." },
+		{
+			"type": "Edge protection (WAF)",
+			"stage": "Production",
+			"impact": "High",
+			"new": true,
+			"desc": "AWS WAF on CloudFront/ALB — managed rule groups (Core, Known-Bad-Inputs, SQLi, IP-reputation, Anonymous-IP) + rate-based rule."
+		},
+		{
+			"type": "Code signing",
+			"stage": "Production",
+			"impact": "Medium",
+			"new": true,
+			"desc": "Verify the CI signature with a pre-start hook to ensure what we built is what runs."
+		},
 
-    { "type": "SBOM Scan",            "stage": "Post-production", "impact": "High",   "new": true,  "desc": "SBOM checking for newly disclosed vulns (medium frequency, 2×/day)." },
-    { "type": "Detect (analysis)",    "stage": "Post-production", "impact": "High",   "new": true,  "desc": "Athena saved queries over ALB/CloudFront logs (404/403 sweeps, hits on /.env /.git /admin, SQLi/XSS in params, single-IP spikes, oversized responses, 5xx spikes)." },
-    { "type": "Detect (analysis)",    "stage": "Post-production", "impact": "High",   "new": true,  "desc": "GuardDuty ECS Runtime Monitoring for compromise in running containers." },
-    { "type": "Detect (analysis)",    "stage": "Post-production", "impact": "High",   "new": true,  "desc": "VPC Flow / DNS / CloudTrail; alert on secret-scan hits in history." },
-    { "type": "Validate (offensive)", "stage": "Post-production", "impact": "High",   "new": false, "desc": "Quarterly exploratory pen testing using paid humans." },
-    { "type": "Validate",             "stage": "Post-production", "impact": "Medium", "new": true,  "desc": "Weekly AWS Prowler scans of our infra." },
-    { "type": "Validate (offensive)", "stage": "Post-production", "impact": "Medium", "new": true,  "desc": "Weekly pen test using AWS Security Agent." }
-  ]
+		{
+			"type": "SBOM Scan",
+			"stage": "Post-production",
+			"impact": "High",
+			"new": true,
+			"desc": "SBOM checking for newly disclosed vulns (medium frequency, 2×/day)."
+		},
+		{
+			"type": "Detect (analysis)",
+			"stage": "Post-production",
+			"impact": "High",
+			"new": true,
+			"desc": "Athena saved queries over ALB/CloudFront logs (404/403 sweeps, hits on /.env /.git /admin, SQLi/XSS in params, single-IP spikes, oversized responses, 5xx spikes)."
+		},
+		{
+			"type": "Detect (analysis)",
+			"stage": "Post-production",
+			"impact": "High",
+			"new": true,
+			"desc": "GuardDuty ECS Runtime Monitoring for compromise in running containers."
+		},
+		{
+			"type": "Detect (analysis)",
+			"stage": "Post-production",
+			"impact": "High",
+			"new": true,
+			"desc": "VPC Flow / DNS / CloudTrail; alert on secret-scan hits in history."
+		},
+		{
+			"type": "Validate (offensive)",
+			"stage": "Post-production",
+			"impact": "High",
+			"new": false,
+			"desc": "Quarterly exploratory pen testing using paid humans."
+		},
+		{
+			"type": "Validate",
+			"stage": "Post-production",
+			"impact": "Medium",
+			"new": true,
+			"desc": "Weekly AWS Prowler scans of our infra."
+		},
+		{
+			"type": "Validate (offensive)",
+			"stage": "Post-production",
+			"impact": "Medium",
+			"new": true,
+			"desc": "Weekly pen test using AWS Security Agent."
+		}
+	]
 }
